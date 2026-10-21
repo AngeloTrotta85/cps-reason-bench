@@ -1,0 +1,67 @@
+schema_version: 1
+name: protocol_sanity_simple_parameter
+description: Exercise one required numeric action parameter in an otherwise direct task.
+task_family: protocol_sanity
+difficulty: 1
+difficulty_level: sanity_parameter
+difficulty_profile:
+  family_parameters: {layer: protocol_sanity_v1, capability: simple_parameter}
+seed: 703
+max_steps: 1
+time_step: 1.0
+
+task:
+  instructions: Raise process flow from 0 to exactly 2 using the adjustable flow control.
+  objectives: [Finish with process flow equal to 2.]
+  terminate_on_goals: true
+
+graph:
+  nodes:
+    process:
+      variables:
+        flow: {initial: 0.0, hard_min: 0.0, hard_max: 4.0}
+  edges: []
+  resources: {}
+sensors:
+  - {id: flow_sensor, target: process.flow, observable: true}
+actions:
+  - id: adjust_flow
+    operation: adjust
+    target: process.flow
+    amount: 0.0
+    parameters:
+      amount: {type: number, required: true, minimum: 2.0, maximum: 2.0}
+    description: Increase flow by the supplied numeric amount; the permitted amount is 2.
+  - {id: wait, operation: noop, description: Leave process flow unchanged.}
+faults: []
+constraints: []
+goals:
+  - id: target_flow
+    status_observable: true
+    condition: {target: process.flow, operator: eq, value: 2.0}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: current, history_limit: 1, include_action_outcomes: true}
+evaluation:
+  required_actions: [adjust_flow]
+  expected_action_sequence: [adjust_flow]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+  protocol_sanity:
+    correct_action: adjust_flow
+    required_parameters: {amount: 2.0}
+    one_step_solution: true
+    hidden_state_required: false
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: adjust_flow, parameters: {amount: 2.0}}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+reference:
+  kind: feasible_reference
+  evidence: scripted one-step parameterized replay
+  optimality: not_claimed

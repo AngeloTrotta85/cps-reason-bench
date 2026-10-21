@@ -1,0 +1,68 @@
+schema_version: 1
+name: foundation_prospective_entry
+description: Request one directly computable future callback and act when the process is ready.
+task_family: prospective_reasoning
+difficulty: 1
+difficulty_level: entry_1
+difficulty_profile:
+  family_parameters: {content_revision: foundation_v1}
+seed: 801
+max_steps: 3
+time_step: 1.0
+
+task:
+  instructions: The cycle becomes ready after one simulator step. Arrange a future invocation for that time, then acknowledge the ready cycle.
+  objectives: [Acknowledge the cycle after it becomes ready.]
+  terminate_on_goals: true
+graph:
+  nodes:
+    process:
+      variables:
+        progress: {initial: 0.0, drift: 1.0, hard_min: 0.0, hard_max: 3.0}
+        acknowledged: {initial: false}
+  edges: []
+  resources: {}
+sensors:
+  - {id: progress_sensor, target: process.progress, observable: true}
+  - {id: acknowledgement_sensor, target: process.acknowledged, observable: true}
+actions:
+  - id: acknowledge_cycle
+    operation: set
+    target: process.acknowledged
+    value: true
+    preconditions: [{target: process.progress, operator: ge, value: 1.0}]
+    description: Acknowledge the cycle after progress reaches 1.
+  - {id: wait, operation: noop, description: Make no physical intervention.}
+faults: []
+constraints: []
+goals:
+  - id: cycle_acknowledged
+    status_observable: true
+    condition: {target: process.acknowledged, operator: eq, value: true}
+observability: {full_state: false}
+interaction:
+  mode: scheduled
+  initial_invocation: true
+  min_callback_steps: 1
+  max_callback_steps: 3
+  max_actions_per_interaction: 1
+context: {mode: current, history_limit: 2, include_action_outcomes: true, include_public_events: true}
+evaluation:
+  callback_target_window: [1, 1]
+  relevant_event_step: 1
+  relevant_action: acknowledge_cycle
+  required_actions: [acknowledge_cycle]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [], callback: {after_steps: 1}, subscriptions: [], context_requests: []}
+    - at_step: 1
+      decision: {actions: [{action_id: acknowledge_cycle}], callback: null, subscriptions: [], context_requests: []}
+  default_decision: {actions: [], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted callback replay
+  optimality: not_claimed

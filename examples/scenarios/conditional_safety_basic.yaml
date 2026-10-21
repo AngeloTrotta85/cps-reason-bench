@@ -1,0 +1,137 @@
+schema_version: 1
+name: conditional_safety_basic
+description: Inspect the relevant hidden state to verify and restore a conditional safety rule.
+task_family: conditional_safety
+difficulty: 1
+difficulty_level: basic
+difficulty_profile:
+  family_parameters:
+    conditional_rules: 1
+    relevant_hidden_variables: 1
+  number_of_nodes: 1
+  number_of_state_variables: 2
+  number_of_valid_actions: 4
+  number_of_distractor_actions: 0
+  minimum_required_planning_depth: 2
+  number_of_prerequisites: 0
+  number_of_interacting_goals: 1
+  number_of_constraints: 1
+  number_of_hidden_state_variables: 1
+  maximum_observation_delay_steps: 0
+  maximum_sensor_noise_std: 0.0
+  number_of_faults: 0
+  initial_resources: {diagnostic_budget: 1.0}
+  resource_scarcity:
+    diagnostic_budget: {initial: 1.0, reference_cost: 1.0, margin: 0.0, initial_to_reference_cost_ratio: 1.0}
+  callback_timing_tolerance_steps: null
+  number_of_candidate_event_subscriptions: 0
+  number_of_misleading_observations: 0
+  number_of_possible_safety_rule_violations: 1
+seed: 47
+max_steps: 4
+time_step: 1.0
+
+task:
+  instructions: Enforce the rule "if the pump is active, the isolation valve must be open." Inspect the valve state needed to test the rule, then correct it if necessary.
+  terminate_on_goals: true
+  safety_rules:
+    - If pump_active is true, valve_open must be true.
+
+graph:
+  nodes:
+    transfer:
+      variables:
+        pump_active:
+          initial: true
+        valve_open:
+          initial: false
+  edges: []
+  resources:
+    diagnostic_budget:
+      initial: 1.0
+      min: 0.0
+      observable: true
+
+sensors:
+  - id: pump_status
+    target: transfer.pump_active
+    observable: true
+
+actions:
+  - id: inspect_valve
+    operation: inspect
+    target: transfer.valve_open
+    costs: {diagnostic_budget: 1.0}
+    description: Inspect the otherwise hidden isolation-valve state.
+  - id: open_valve
+    operation: set
+    target: transfer.valve_open
+    value: true
+    description: Open the isolation valve.
+  - id: stop_pump
+    operation: set
+    target: transfer.pump_active
+    value: false
+    description: Stop the pump as an alternative safety response.
+  - id: wait
+    operation: noop
+    description: Take no action.
+
+faults: []
+constraints:
+  - id: active_pump_requires_open_valve
+    kind: conditional
+    if:
+      target: transfer.pump_active
+      operator: eq
+      value: true
+    then:
+      target: transfer.valve_open
+      operator: eq
+      value: true
+goals:
+  - id: conditional_rule_satisfied
+    any:
+      - target: transfer.valve_open
+        operator: eq
+        value: true
+      - target: transfer.pump_active
+        operator: eq
+        value: false
+
+observability:
+  full_state: false
+interaction:
+  mode: periodic
+  interval_steps: 1
+  max_actions_per_interaction: 1
+context:
+  mode: previous
+  history_limit: 2
+  include_action_outcomes: true
+  include_public_events: true
+evaluation:
+  required_inspections: [inspect_valve]
+  required_actions: [open_valve]
+  expected_action_sequence: [inspect_valve, open_valve]
+  reference_action_count: 2
+  allowed_safety_violations: 2
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: inspect_valve}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 1
+      decision:
+        actions: [{action_id: open_valve}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+reference:
+  kind: feasible_reference
+  evidence: scripted policy replay; alternative safe stop-pump response is also allowed
+  optimality: not_claimed

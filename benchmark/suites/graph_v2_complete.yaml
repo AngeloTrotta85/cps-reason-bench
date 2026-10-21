@@ -1,0 +1,2706 @@
+suite_schema_version: 1
+name: cps_reason_graph_v2
+version: 1.0.0
+description: Complete CPS Reason Bench 0.5.0 graph-dependent reasoning suite.
+task_families:
+- prospective_reasoning
+- planning
+- interference
+- conditional_safety
+- adaptation
+- temporal_tracking
+interaction:
+  source: scenario
+context:
+  source: scenario
+protocol:
+  prompt:
+    id: cps-reason-json-control
+    version: 2.0.0
+  schema:
+    id: cps-reason-decision
+    version: 1.0.0
+  output_validation_policy: strict
+  retry_policy:
+    name: strict_zero_correction
+    max_corrections: 0
+evaluation:
+  analysis_unit: semantic_condition_x_simulator_seed
+  default_model_repetitions: 5
+  scripted_reference_repetitions: 1
+  seeded_random_repetitions: 5
+  cluster_repetitions_by_analysis_unit: true
+  model_repetition_seed_policy: fixed_per_model_condition
+metric_requirements:
+  prospective_reasoning:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  planning:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  interference:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  conditional_safety:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  adaptation:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  temporal_tracking:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+difficulty_configurations: {}
+scenarios:
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510001
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810001
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510001
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810001
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510001
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810001
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510004
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810004
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510005
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810005
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510011
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810011
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510011
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810011
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510011
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810011
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510014
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810014
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510015
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810015
+- id: graph_v2_prospective_reasoning_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_3
+    generation_seed: 510021
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810021
+- id: graph_v2_prospective_reasoning_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_3
+    generation_seed: 510021
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810021
+- id: graph_v2_prospective_reasoning_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_3
+    generation_seed: 510021
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810021
+- id: graph_v2_prospective_reasoning_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_3
+    generation_seed: 510024
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810024
+- id: graph_v2_prospective_reasoning_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_3
+    generation_seed: 510025
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810025
+- id: graph_v2_prospective_reasoning_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_bridge
+    generation_seed: 510031
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810031
+- id: graph_v2_prospective_reasoning_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_bridge
+    generation_seed: 510031
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810031
+- id: graph_v2_prospective_reasoning_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_bridge
+    generation_seed: 510031
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810031
+- id: graph_v2_prospective_reasoning_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_bridge
+    generation_seed: 510034
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810034
+- id: graph_v2_prospective_reasoning_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_bridge
+    generation_seed: 510035
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810035
+- id: graph_v2_prospective_reasoning_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_1
+    generation_seed: 510041
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810041
+- id: graph_v2_prospective_reasoning_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_1
+    generation_seed: 510041
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810041
+- id: graph_v2_prospective_reasoning_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_1
+    generation_seed: 510041
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810041
+- id: graph_v2_prospective_reasoning_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_1
+    generation_seed: 510044
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810044
+- id: graph_v2_prospective_reasoning_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_1
+    generation_seed: 510045
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810045
+- id: graph_v2_prospective_reasoning_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_2
+    generation_seed: 510051
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810051
+- id: graph_v2_prospective_reasoning_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_2
+    generation_seed: 510051
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810051
+- id: graph_v2_prospective_reasoning_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_2
+    generation_seed: 510051
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810051
+- id: graph_v2_prospective_reasoning_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_2
+    generation_seed: 510054
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810054
+- id: graph_v2_prospective_reasoning_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_2
+    generation_seed: 510055
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810055
+- id: graph_v2_prospective_reasoning_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_3
+    generation_seed: 510061
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810061
+- id: graph_v2_prospective_reasoning_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_3
+    generation_seed: 510061
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810061
+- id: graph_v2_prospective_reasoning_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_3
+    generation_seed: 510061
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810061
+- id: graph_v2_prospective_reasoning_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_3
+    generation_seed: 510064
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810064
+- id: graph_v2_prospective_reasoning_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_3
+    generation_seed: 510065
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810065
+- id: graph_v2_prospective_reasoning_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_4
+    generation_seed: 510071
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810071
+- id: graph_v2_prospective_reasoning_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_4
+    generation_seed: 510071
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810071
+- id: graph_v2_prospective_reasoning_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_4
+    generation_seed: 510071
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810071
+- id: graph_v2_prospective_reasoning_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_4
+    generation_seed: 510074
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810074
+- id: graph_v2_prospective_reasoning_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_core_4
+    generation_seed: 510075
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810075
+- id: graph_v2_planning_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_1
+    generation_seed: 510081
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810081
+- id: graph_v2_planning_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_1
+    generation_seed: 510081
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810081
+- id: graph_v2_planning_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_1
+    generation_seed: 510081
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810081
+- id: graph_v2_planning_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_1
+    generation_seed: 510084
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810084
+- id: graph_v2_planning_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_1
+    generation_seed: 510085
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810085
+- id: graph_v2_planning_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_2
+    generation_seed: 510091
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810091
+- id: graph_v2_planning_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_2
+    generation_seed: 510091
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810091
+- id: graph_v2_planning_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_2
+    generation_seed: 510091
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810091
+- id: graph_v2_planning_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_2
+    generation_seed: 510094
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810094
+- id: graph_v2_planning_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_2
+    generation_seed: 510095
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810095
+- id: graph_v2_planning_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_3
+    generation_seed: 510101
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810101
+- id: graph_v2_planning_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_3
+    generation_seed: 510101
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810101
+- id: graph_v2_planning_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_3
+    generation_seed: 510101
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810101
+- id: graph_v2_planning_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_3
+    generation_seed: 510104
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810104
+- id: graph_v2_planning_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_entry_3
+    generation_seed: 510105
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810105
+- id: graph_v2_planning_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510111
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810111
+- id: graph_v2_planning_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510111
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810111
+- id: graph_v2_planning_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510111
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810111
+- id: graph_v2_planning_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510114
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810114
+- id: graph_v2_planning_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510115
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810115
+- id: graph_v2_planning_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_1
+    generation_seed: 510121
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810121
+- id: graph_v2_planning_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_1
+    generation_seed: 510121
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810121
+- id: graph_v2_planning_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_1
+    generation_seed: 510121
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810121
+- id: graph_v2_planning_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_1
+    generation_seed: 510124
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810124
+- id: graph_v2_planning_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_1
+    generation_seed: 510125
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810125
+- id: graph_v2_planning_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_2
+    generation_seed: 510131
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810131
+- id: graph_v2_planning_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_2
+    generation_seed: 510131
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810131
+- id: graph_v2_planning_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_2
+    generation_seed: 510131
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810131
+- id: graph_v2_planning_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_2
+    generation_seed: 510134
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810134
+- id: graph_v2_planning_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_2
+    generation_seed: 510135
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810135
+- id: graph_v2_planning_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_3
+    generation_seed: 510141
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810141
+- id: graph_v2_planning_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_3
+    generation_seed: 510141
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810141
+- id: graph_v2_planning_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_3
+    generation_seed: 510141
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810141
+- id: graph_v2_planning_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_3
+    generation_seed: 510144
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810144
+- id: graph_v2_planning_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_3
+    generation_seed: 510145
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810145
+- id: graph_v2_planning_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_4
+    generation_seed: 510151
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810151
+- id: graph_v2_planning_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_4
+    generation_seed: 510151
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810151
+- id: graph_v2_planning_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_4
+    generation_seed: 510151
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810151
+- id: graph_v2_planning_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_4
+    generation_seed: 510154
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810154
+- id: graph_v2_planning_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_core_4
+    generation_seed: 510155
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810155
+- id: graph_v2_interference_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_1
+    generation_seed: 510161
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810161
+- id: graph_v2_interference_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_1
+    generation_seed: 510161
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810161
+- id: graph_v2_interference_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_1
+    generation_seed: 510161
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810161
+- id: graph_v2_interference_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_1
+    generation_seed: 510164
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810164
+- id: graph_v2_interference_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_1
+    generation_seed: 510165
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810165
+- id: graph_v2_interference_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_2
+    generation_seed: 510171
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810171
+- id: graph_v2_interference_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_2
+    generation_seed: 510171
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810171
+- id: graph_v2_interference_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_2
+    generation_seed: 510171
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810171
+- id: graph_v2_interference_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_2
+    generation_seed: 510174
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810174
+- id: graph_v2_interference_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_2
+    generation_seed: 510175
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810175
+- id: graph_v2_interference_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_3
+    generation_seed: 510181
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810181
+- id: graph_v2_interference_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_3
+    generation_seed: 510181
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810181
+- id: graph_v2_interference_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_3
+    generation_seed: 510181
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810181
+- id: graph_v2_interference_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_3
+    generation_seed: 510184
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810184
+- id: graph_v2_interference_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_entry_3
+    generation_seed: 510185
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810185
+- id: graph_v2_interference_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_bridge
+    generation_seed: 510191
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810191
+- id: graph_v2_interference_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_bridge
+    generation_seed: 510191
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810191
+- id: graph_v2_interference_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_bridge
+    generation_seed: 510191
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810191
+- id: graph_v2_interference_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_bridge
+    generation_seed: 510194
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810194
+- id: graph_v2_interference_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_bridge
+    generation_seed: 510195
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810195
+- id: graph_v2_interference_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_1
+    generation_seed: 510201
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810201
+- id: graph_v2_interference_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_1
+    generation_seed: 510201
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810201
+- id: graph_v2_interference_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_1
+    generation_seed: 510201
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810201
+- id: graph_v2_interference_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_1
+    generation_seed: 510204
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810204
+- id: graph_v2_interference_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_1
+    generation_seed: 510205
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810205
+- id: graph_v2_interference_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_2
+    generation_seed: 510211
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810211
+- id: graph_v2_interference_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_2
+    generation_seed: 510211
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810211
+- id: graph_v2_interference_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_2
+    generation_seed: 510211
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810211
+- id: graph_v2_interference_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_2
+    generation_seed: 510214
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810214
+- id: graph_v2_interference_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_2
+    generation_seed: 510215
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810215
+- id: graph_v2_interference_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510221
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810221
+- id: graph_v2_interference_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510221
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810221
+- id: graph_v2_interference_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510221
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810221
+- id: graph_v2_interference_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510224
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810224
+- id: graph_v2_interference_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510225
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810225
+- id: graph_v2_interference_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510231
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810231
+- id: graph_v2_interference_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510231
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810231
+- id: graph_v2_interference_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510231
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810231
+- id: graph_v2_interference_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510234
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810234
+- id: graph_v2_interference_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510235
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810235
+- id: graph_v2_conditional_safety_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_1
+    generation_seed: 510241
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810241
+- id: graph_v2_conditional_safety_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_1
+    generation_seed: 510241
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810241
+- id: graph_v2_conditional_safety_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_1
+    generation_seed: 510241
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810241
+- id: graph_v2_conditional_safety_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_1
+    generation_seed: 510244
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810244
+- id: graph_v2_conditional_safety_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_1
+    generation_seed: 510245
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810245
+- id: graph_v2_conditional_safety_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_2
+    generation_seed: 510251
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810251
+- id: graph_v2_conditional_safety_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_2
+    generation_seed: 510251
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810251
+- id: graph_v2_conditional_safety_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_2
+    generation_seed: 510251
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810251
+- id: graph_v2_conditional_safety_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_2
+    generation_seed: 510254
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810254
+- id: graph_v2_conditional_safety_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_2
+    generation_seed: 510255
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810255
+- id: graph_v2_conditional_safety_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_3
+    generation_seed: 510261
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810261
+- id: graph_v2_conditional_safety_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_3
+    generation_seed: 510261
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810261
+- id: graph_v2_conditional_safety_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_3
+    generation_seed: 510261
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810261
+- id: graph_v2_conditional_safety_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_3
+    generation_seed: 510264
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810264
+- id: graph_v2_conditional_safety_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_entry_3
+    generation_seed: 510265
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810265
+- id: graph_v2_conditional_safety_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_bridge
+    generation_seed: 510271
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810271
+- id: graph_v2_conditional_safety_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_bridge
+    generation_seed: 510271
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810271
+- id: graph_v2_conditional_safety_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_bridge
+    generation_seed: 510271
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810271
+- id: graph_v2_conditional_safety_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_bridge
+    generation_seed: 510274
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810274
+- id: graph_v2_conditional_safety_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_bridge
+    generation_seed: 510275
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810275
+- id: graph_v2_conditional_safety_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_1
+    generation_seed: 510281
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810281
+- id: graph_v2_conditional_safety_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_1
+    generation_seed: 510281
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810281
+- id: graph_v2_conditional_safety_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_1
+    generation_seed: 510281
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810281
+- id: graph_v2_conditional_safety_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_1
+    generation_seed: 510284
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810284
+- id: graph_v2_conditional_safety_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_1
+    generation_seed: 510285
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810285
+- id: graph_v2_conditional_safety_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510291
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810291
+- id: graph_v2_conditional_safety_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510291
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810291
+- id: graph_v2_conditional_safety_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510291
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810291
+- id: graph_v2_conditional_safety_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510294
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810294
+- id: graph_v2_conditional_safety_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510295
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810295
+- id: graph_v2_conditional_safety_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_3
+    generation_seed: 510301
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810301
+- id: graph_v2_conditional_safety_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_3
+    generation_seed: 510301
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810301
+- id: graph_v2_conditional_safety_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_3
+    generation_seed: 510301
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810301
+- id: graph_v2_conditional_safety_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_3
+    generation_seed: 510304
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810304
+- id: graph_v2_conditional_safety_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_3
+    generation_seed: 510305
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810305
+- id: graph_v2_conditional_safety_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_4
+    generation_seed: 510311
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810311
+- id: graph_v2_conditional_safety_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_4
+    generation_seed: 510311
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810311
+- id: graph_v2_conditional_safety_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_4
+    generation_seed: 510311
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810311
+- id: graph_v2_conditional_safety_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_4
+    generation_seed: 510314
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810314
+- id: graph_v2_conditional_safety_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_4
+    generation_seed: 510315
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810315
+- id: graph_v2_adaptation_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_1
+    generation_seed: 510321
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810321
+- id: graph_v2_adaptation_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_1
+    generation_seed: 510321
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810321
+- id: graph_v2_adaptation_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_1
+    generation_seed: 510321
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810321
+- id: graph_v2_adaptation_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_1
+    generation_seed: 510324
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810324
+- id: graph_v2_adaptation_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_1
+    generation_seed: 510325
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810325
+- id: graph_v2_adaptation_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_2
+    generation_seed: 510331
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810331
+- id: graph_v2_adaptation_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_2
+    generation_seed: 510331
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810331
+- id: graph_v2_adaptation_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_2
+    generation_seed: 510331
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810331
+- id: graph_v2_adaptation_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_2
+    generation_seed: 510334
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810334
+- id: graph_v2_adaptation_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_2
+    generation_seed: 510335
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810335
+- id: graph_v2_adaptation_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_3
+    generation_seed: 510341
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810341
+- id: graph_v2_adaptation_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_3
+    generation_seed: 510341
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810341
+- id: graph_v2_adaptation_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_3
+    generation_seed: 510341
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810341
+- id: graph_v2_adaptation_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_3
+    generation_seed: 510344
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810344
+- id: graph_v2_adaptation_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_entry_3
+    generation_seed: 510345
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810345
+- id: graph_v2_adaptation_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_bridge
+    generation_seed: 510351
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810351
+- id: graph_v2_adaptation_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_bridge
+    generation_seed: 510351
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810351
+- id: graph_v2_adaptation_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_bridge
+    generation_seed: 510351
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810351
+- id: graph_v2_adaptation_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_bridge
+    generation_seed: 510354
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810354
+- id: graph_v2_adaptation_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_bridge
+    generation_seed: 510355
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810355
+- id: graph_v2_adaptation_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_1
+    generation_seed: 510361
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810361
+- id: graph_v2_adaptation_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_1
+    generation_seed: 510361
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810361
+- id: graph_v2_adaptation_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_1
+    generation_seed: 510361
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810361
+- id: graph_v2_adaptation_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_1
+    generation_seed: 510364
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810364
+- id: graph_v2_adaptation_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_1
+    generation_seed: 510365
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810365
+- id: graph_v2_adaptation_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_2
+    generation_seed: 510371
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810371
+- id: graph_v2_adaptation_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_2
+    generation_seed: 510371
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810371
+- id: graph_v2_adaptation_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_2
+    generation_seed: 510371
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810371
+- id: graph_v2_adaptation_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_2
+    generation_seed: 510374
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810374
+- id: graph_v2_adaptation_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_2
+    generation_seed: 510375
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810375
+- id: graph_v2_adaptation_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510381
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810381
+- id: graph_v2_adaptation_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510381
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810381
+- id: graph_v2_adaptation_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510381
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810381
+- id: graph_v2_adaptation_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510384
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810384
+- id: graph_v2_adaptation_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510385
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810385
+- id: graph_v2_adaptation_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_4
+    generation_seed: 510391
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810391
+- id: graph_v2_adaptation_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_4
+    generation_seed: 510391
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810391
+- id: graph_v2_adaptation_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_4
+    generation_seed: 510391
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810391
+- id: graph_v2_adaptation_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_4
+    generation_seed: 510394
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810394
+- id: graph_v2_adaptation_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_4
+    generation_seed: 510395
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810395
+- id: graph_v2_temporal_tracking_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_1
+    generation_seed: 510401
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810401
+- id: graph_v2_temporal_tracking_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_1
+    generation_seed: 510401
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810401
+- id: graph_v2_temporal_tracking_graph_v2_entry_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_1
+    generation_seed: 510401
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810401
+- id: graph_v2_temporal_tracking_graph_v2_entry_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_1
+    generation_seed: 510404
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810404
+- id: graph_v2_temporal_tracking_graph_v2_entry_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_1
+    generation_seed: 510405
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810405
+- id: graph_v2_temporal_tracking_graph_v2_entry_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_2
+    generation_seed: 510411
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810411
+- id: graph_v2_temporal_tracking_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_2
+    generation_seed: 510411
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810411
+- id: graph_v2_temporal_tracking_graph_v2_entry_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_2
+    generation_seed: 510411
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810411
+- id: graph_v2_temporal_tracking_graph_v2_entry_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_2
+    generation_seed: 510414
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810414
+- id: graph_v2_temporal_tracking_graph_v2_entry_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_2
+    generation_seed: 510415
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810415
+- id: graph_v2_temporal_tracking_graph_v2_entry_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_3
+    generation_seed: 510421
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810421
+- id: graph_v2_temporal_tracking_graph_v2_entry_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_3
+    generation_seed: 510421
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810421
+- id: graph_v2_temporal_tracking_graph_v2_entry_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_3
+    generation_seed: 510421
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810421
+- id: graph_v2_temporal_tracking_graph_v2_entry_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_3
+    generation_seed: 510424
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810424
+- id: graph_v2_temporal_tracking_graph_v2_entry_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_entry_3
+    generation_seed: 510425
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810425
+- id: graph_v2_temporal_tracking_graph_v2_bridge_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_bridge
+    generation_seed: 510431
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810431
+- id: graph_v2_temporal_tracking_graph_v2_bridge_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_bridge
+    generation_seed: 510431
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810431
+- id: graph_v2_temporal_tracking_graph_v2_bridge_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_bridge
+    generation_seed: 510431
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810431
+- id: graph_v2_temporal_tracking_graph_v2_bridge_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_bridge
+    generation_seed: 510434
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810434
+- id: graph_v2_temporal_tracking_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_bridge
+    generation_seed: 510435
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810435
+- id: graph_v2_temporal_tracking_graph_v2_core_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_1
+    generation_seed: 510441
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810441
+- id: graph_v2_temporal_tracking_graph_v2_core_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_1
+    generation_seed: 510441
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810441
+- id: graph_v2_temporal_tracking_graph_v2_core_1_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_1
+    generation_seed: 510441
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810441
+- id: graph_v2_temporal_tracking_graph_v2_core_1_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_1
+    generation_seed: 510444
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810444
+- id: graph_v2_temporal_tracking_graph_v2_core_1_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_1
+    generation_seed: 510445
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810445
+- id: graph_v2_temporal_tracking_graph_v2_core_2_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_2
+    generation_seed: 510451
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810451
+- id: graph_v2_temporal_tracking_graph_v2_core_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_2
+    generation_seed: 510451
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810451
+- id: graph_v2_temporal_tracking_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_2
+    generation_seed: 510451
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810451
+- id: graph_v2_temporal_tracking_graph_v2_core_2_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_2
+    generation_seed: 510454
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810454
+- id: graph_v2_temporal_tracking_graph_v2_core_2_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_2
+    generation_seed: 510455
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810455
+- id: graph_v2_temporal_tracking_graph_v2_core_3_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_3
+    generation_seed: 510461
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810461
+- id: graph_v2_temporal_tracking_graph_v2_core_3_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_3
+    generation_seed: 510461
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810461
+- id: graph_v2_temporal_tracking_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_3
+    generation_seed: 510461
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810461
+- id: graph_v2_temporal_tracking_graph_v2_core_3_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_3
+    generation_seed: 510464
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810464
+- id: graph_v2_temporal_tracking_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_3
+    generation_seed: 510465
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810465
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510471
+    parameters:
+      instance_index: 0
+  simulator_seeds:
+  - 810471
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510471
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810471
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510471
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810471
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510474
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810474
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510475
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810475

@@ -1,0 +1,13 @@
+name: gemini_example
+backend: openai-compatible
+model: google/gemini-2.5-flash
+base_url: https://openrouter.ai/api/v1
+api_key_env: OPENROUTER_API_KEY
+timeout_seconds: 120
+decoding: {temperature: 0, top_p: 1, max_tokens: 768, seed: null}
+backend_parameters:
+  provider: openrouter
+  structured_output_mode: prompt_only
+  routing: {mode: benchmark, allow_fallbacks: false, require_parameters: true, data_collection: deny}
+  transport_retry: {max_attempts: 1}
+response_normalization: {mode: none}

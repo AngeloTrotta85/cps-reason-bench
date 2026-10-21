@@ -1,0 +1,40 @@
+suite_schema_version: 1
+name: cps_reason_protocol_sanity_v1
+version: 1.0.0
+description: Separate four-episode check of direct protocol use before CPS reasoning evaluation.
+task_families: [protocol_sanity]
+difficulty_configurations:
+  protocol_sanity:
+    sanity_direct: {reasoning_layer: protocol_sanity}
+    sanity_distractor: {reasoning_layer: protocol_sanity}
+    sanity_parameter: {reasoning_layer: protocol_sanity}
+    sanity_noop: {reasoning_layer: protocol_sanity}
+interaction: {source: scenario}
+context: {source: scenario}
+protocol:
+  prompt: {id: cps-reason-json-control, version: 2.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy: {name: strict_zero_correction, max_corrections: 0}
+evaluation: {}
+metric_requirements:
+  protocol_sanity:
+    - general.task_success
+    - general.unnecessary_actions
+    - protocol_compliance.first_attempt_json_valid_rate
+    - protocol_compliance.first_attempt_schema_valid_rate
+    - protocol_compliance.first_attempt_decision_valid_rate
+    - protocol_compliance.final_executable_decisions
+scenarios:
+  - id: direct_visible_action
+    path: ../scenarios/protocol_sanity/direct_action.yaml
+    simulator_seeds: [4701]
+  - id: direct_action_with_distractor
+    path: ../scenarios/protocol_sanity/direct_action_distractor.yaml
+    simulator_seeds: [4702]
+  - id: simple_numeric_parameter
+    path: ../scenarios/protocol_sanity/simple_parameter.yaml
+    simulator_seeds: [4703]
+  - id: explicit_noop
+    path: ../scenarios/protocol_sanity/explicit_noop.yaml
+    simulator_seeds: [4704]

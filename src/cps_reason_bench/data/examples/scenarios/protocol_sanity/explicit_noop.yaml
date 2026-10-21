@@ -1,0 +1,64 @@
+schema_version: 1
+name: protocol_sanity_explicit_noop
+description: Verify that a model can explicitly avoid an unnecessary intervention.
+task_family: protocol_sanity
+difficulty: 1
+difficulty_level: sanity_noop
+difficulty_profile:
+  family_parameters: {layer: protocol_sanity_v1, capability: explicit_noop}
+seed: 704
+max_steps: 1
+time_step: 1.0
+
+task:
+  instructions: Keep the already stable process unchanged for this interval.
+  objectives: [Finish with the process stable.]
+  terminate_on_goals: false
+
+graph:
+  nodes:
+    process:
+      variables:
+        stable: {initial: true}
+  edges: []
+  resources: {}
+sensors:
+  - {id: stability_sensor, target: process.stable, observable: true}
+actions:
+  - {id: wait, operation: noop, description: Make no physical intervention.}
+  - id: restart_process
+    operation: set
+    target: process.stable
+    value: false
+    role: distractor
+    description: Restart the stable process and temporarily make it unavailable.
+faults: []
+constraints: []
+goals:
+  - id: remains_stable
+    status_observable: true
+    condition: {target: process.stable, operator: eq, value: true}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: current, history_limit: 1, include_action_outcomes: true}
+evaluation:
+  required_actions: [wait]
+  forbidden_actions: [restart_process]
+  unnecessary_actions: [restart_process]
+  expected_action_sequence: [wait]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+  protocol_sanity:
+    correct_action: wait
+    requires_noop: true
+    one_step_solution: true
+    hidden_state_required: false
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: wait}], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted explicit no-op replay
+  optimality: not_claimed

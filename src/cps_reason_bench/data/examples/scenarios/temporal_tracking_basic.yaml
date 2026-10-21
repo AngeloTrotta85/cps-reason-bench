@@ -1,0 +1,179 @@
+schema_version: 1
+name: temporal_tracking_controlled_1
+description: Route a delayed actuator response using the earlier public request and command history.
+task_family: temporal_tracking
+difficulty: 1
+difficulty_level: controlled_1
+difficulty_profile:
+  family_parameters:
+    delayed_response_structure: single_command
+    controlled_content_version: 2
+  reasoning_profile:
+    intended_progression: controlled_1
+    temporal_distance: 1
+    action_effect_delay: 1
+    relevant_historical_observations: 1
+    temporal_distractor_count: 0
+    overlapping_causal_actions: 0
+    required_context_mode: previous
+    required_history_limit: 1
+seed: 61
+max_steps: 3
+time_step: 1.0
+
+task:
+  instructions: Route each completed actuator response to the channel requested when its command was issued. A command response appears after its documented delay; use only explicit benchmark context to associate the response with its earlier request and action.
+  objectives:
+    - Process the requested delayed response through the matching channel.
+    - Use no more than one command-budget unit.
+  terminate_on_goals: true
+
+graph:
+  nodes:
+    actuator_bank:
+      variables:
+        requested_channel:
+          initial: A
+        response_ready:
+          initial: false
+        response_source:
+          initial: none
+        processed_count:
+          initial: 0
+          hard_min: 0
+          hard_max: 1
+  edges: []
+  resources:
+    command_budget:
+      initial: 1.0
+      min: 0.0
+      observable: true
+
+sensors:
+  - id: request_sensor
+    target: actuator_bank.requested_channel
+    observable: true
+  - id: response_sensor
+    target: actuator_bank.response_ready
+    observable: true
+
+actions:
+  - id: start_channel_a
+    operation: set
+    target: actuator_bank.response_ready
+    value: true
+    effect_delay_steps: 1
+    costs: {command_budget: 1.0}
+    preconditions:
+      - {target: actuator_bank.response_ready, operator: eq, value: false}
+    additional_effects:
+      - {operation: set, target: actuator_bank.response_source, value: A}
+    description: Issue a channel A actuator command; its response appears after one step.
+  - id: start_channel_b
+    operation: set
+    target: actuator_bank.response_ready
+    value: true
+    effect_delay_steps: 1
+    costs: {command_budget: 1.0}
+    preconditions:
+      - {target: actuator_bank.response_ready, operator: eq, value: false}
+    additional_effects:
+      - {operation: set, target: actuator_bank.response_source, value: B}
+    description: Issue a channel B actuator command; its response appears after one step.
+  - id: route_channel_a
+    operation: set
+    target: actuator_bank.response_ready
+    value: false
+    preconditions:
+      - {target: actuator_bank.response_ready, operator: eq, value: true}
+      - {target: actuator_bank.response_source, operator: eq, value: A}
+    additional_effects:
+      - {operation: adjust, target: actuator_bank.processed_count, amount: 1}
+    description: Route the available response through channel A.
+  - id: route_channel_b
+    operation: set
+    target: actuator_bank.response_ready
+    value: false
+    preconditions:
+      - {target: actuator_bank.response_ready, operator: eq, value: true}
+      - {target: actuator_bank.response_source, operator: eq, value: B}
+    additional_effects:
+      - {operation: adjust, target: actuator_bank.processed_count, amount: 1}
+    description: Route the available response through channel B.
+  - id: wait
+    operation: noop
+    description: Wait without issuing or routing a command.
+
+faults:
+  - id: request_display_expires
+    at_step: 1
+    kind: sensor_unavailable
+    target: request_sensor
+    announced: false
+
+constraints: []
+goals:
+  - id: delayed_response_processed
+    condition:
+      target: actuator_bank.processed_count
+      operator: ge
+      value: 1
+
+observability:
+  full_state: false
+interaction:
+  mode: periodic
+  interval_steps: 1
+  max_actions_per_interaction: 1
+context:
+  mode: previous
+  history_limit: 2
+  include_action_outcomes: true
+  include_public_events: false
+
+evaluation:
+  required_actions: [start_channel_a, route_channel_a]
+  expected_action_sequence: [start_channel_a, route_channel_a]
+  expected_actions_by_step: {0: start_channel_a, 1: route_channel_a}
+  reference_action_count: 2
+  success_requires_safety: true
+  success_requires_required_actions: true
+  success_requires_temporal_tracking: true
+  temporal:
+    required_temporal_distance: 1
+    action_effect_delay_steps: 1
+    relevant_history_items: 1
+    temporal_distractor_count: 0
+    overlapping_causal_actions: 0
+    selector_sensors: [request_sensor]
+    response_sensor: response_sensor
+    initiation_to_response:
+      start_channel_a: route_channel_a
+      start_channel_b: route_channel_b
+    attribution_actions: [route_channel_a, route_channel_b]
+    current_only_expected_insufficient: true
+
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: start_channel_a}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 1
+      decision:
+        actions: [{action_id: route_channel_a}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+  default_decision:
+    actions: []
+    callback: null
+    subscriptions: []
+    context_requests: []
+
+reference:
+  kind: feasible_reference
+  evidence: scripted replay associates the delayed physical response with the earlier public request and command
+  optimality: not_claimed

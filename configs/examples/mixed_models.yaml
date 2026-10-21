@@ -1,0 +1,10 @@
+config_version: 1
+name: mixed_models
+models:
+  - path: ../models/qwen3_5_0_8b.yaml
+  - path: ../models/openrouter_example.yaml
+benchmark:
+  suite: cps_reason_graph_v2_local_smoke
+repetitions: 1
+output_dir: ../../runs/mixed_models
+runtime: {max_episodes: 2}

@@ -1,0 +1,63 @@
+schema_version: 1
+name: two_node_transfer
+description: Custom demonstration with directed transfer and one unit of control energy; not a frozen Graph-v2 condition.
+task_family: planning
+difficulty: 1
+difficulty_level: custom
+seed: 7
+max_steps: 3
+time_step: 1.0
+task:
+  instructions: Increase source level once so directed coupling raises the receiver by the end. Do not exceed the source safety bound.
+  objectives: [Reach receiver level at least 1.0]
+  safety_rules: [Source level must not exceed 2.0]
+graph:
+  nodes:
+    source:
+      variables:
+        level: {initial: 0, drift: 0, hard_min: 0, hard_max: 3}
+    receiver:
+      variables:
+        level: {initial: 0, drift: 0, hard_min: 0, hard_max: 3}
+  edges:
+    - id: transfer
+      source: source
+      target: receiver
+      variable: level
+      coupling: 0.5
+      directed: true
+      enabled: true
+  resources:
+    energy: {initial: 1, min: 0, observable: true}
+sensors:
+  - {id: source_level, target: source.level, observable: true}
+  - {id: receiver_level, target: receiver.level, observable: true}
+actions:
+  - id: fill
+    operation: adjust
+    target: source.level
+    amount: 2
+    costs: {energy: 1}
+    preconditions:
+      - {target: source.level, operator: eq, value: 0}
+  - {id: wait, operation: noop}
+faults: []
+constraints:
+  - {id: source_safe, kind: bounds, target: source.level, max: 2}
+goals:
+  - id: delivered
+    condition: {target: receiver.level, operator: ge, value: 1.0}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: current}
+evaluation: {success_requires_safety: true, required_actions: [fill], reference_action_count: 1}
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: fill}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+  default_decision: {actions: [], callback: null, subscriptions: [], context_requests: []}
+reference: {kind: feasible_reference, evidence: scripted policy replay, optimality: not_claimed}

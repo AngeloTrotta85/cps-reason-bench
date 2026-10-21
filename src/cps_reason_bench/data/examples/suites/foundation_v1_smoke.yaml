@@ -1,0 +1,46 @@
+suite_schema_version: 1
+name: cps_reason_foundation_v1_smoke
+version: 1.0.0
+description: One entry-level foundation instance for each released reasoning family.
+task_families:
+  - prospective_reasoning
+  - planning
+  - interference
+  - conditional_safety
+  - adaptation
+  - temporal_tracking
+difficulty_configurations: {}
+interaction: {source: scenario}
+context: {source: scenario}
+protocol:
+  prompt: {id: cps-reason-json-control, version: 2.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy: {name: strict_zero_correction, max_corrections: 0}
+evaluation: {}
+metric_requirements:
+  prospective_reasoning: [general.task_success, task_specific.missed_relevant_events, task_specific.reaction_delay_steps]
+  planning: [general.task_success, task_specific.planning_action_attempts, task_specific.prerequisite_violations]
+  interference: [general.task_success, task_specific.misleading_action_rate, task_specific.interference_safety_outcome]
+  conditional_safety: [general.task_success, task_specific.final_rule_satisfaction, task_specific.unnecessary_inspection_count]
+  adaptation: [general.task_success, task_specific.adaptation_success, task_specific.obsolete_actions_after_sufficient_evidence]
+  temporal_tracking: [general.task_success, task_specific.temporal_reasoning_success, task_specific.delayed_effect_attribution_accuracy]
+scenarios:
+  - id: prospective_entry_1
+    generator: {family: prospective_reasoning, level: entry_1, version: 3.0.0, generation_seed: 3101, template: ../scenarios/foundation/prospective_entry.yaml}
+    simulator_seeds: [4101]
+  - id: planning_entry_1
+    generator: {family: planning, level: entry_1, version: 3.0.0, generation_seed: 3201, template: ../scenarios/foundation/planning_entry.yaml}
+    simulator_seeds: [4201]
+  - id: interference_entry_1
+    generator: {family: interference, level: entry_1, version: 3.0.0, generation_seed: 3301, template: ../scenarios/foundation/interference_entry.yaml}
+    simulator_seeds: [4301]
+  - id: conditional_entry_1
+    generator: {family: conditional_safety, level: entry_1, version: 3.0.0, generation_seed: 3401, template: ../scenarios/foundation/conditional_entry.yaml}
+    simulator_seeds: [4401]
+  - id: adaptation_entry_1
+    generator: {family: adaptation, level: entry_1, version: 3.0.0, generation_seed: 3501, template: ../scenarios/foundation/adaptation_entry.yaml}
+    simulator_seeds: [4501]
+  - id: temporal_entry_1
+    generator: {family: temporal_tracking, level: entry_1, version: 3.0.0, generation_seed: 3601, template: ../scenarios/foundation/temporal_entry.yaml}
+    simulator_seeds: [4601]

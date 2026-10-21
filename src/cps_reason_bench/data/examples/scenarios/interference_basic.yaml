@@ -1,0 +1,154 @@
+schema_version: 1
+name: interference_basic
+description: Resist a salient stale alarm and use redundant evidence before intervening.
+task_family: interference
+difficulty: 1
+difficulty_level: basic
+difficulty_profile:
+  family_parameters:
+    misleading_signal_type: stale_high_alarm
+  number_of_nodes: 1
+  number_of_state_variables: 2
+  number_of_valid_actions: 3
+  number_of_distractor_actions: 1
+  minimum_required_planning_depth: 2
+  number_of_prerequisites: 0
+  number_of_interacting_goals: 2
+  number_of_constraints: 1
+  number_of_hidden_state_variables: 0
+  maximum_observation_delay_steps: 0
+  maximum_sensor_noise_std: 0.0
+  number_of_faults: 1
+  initial_resources: {cooling_energy: 1.0}
+  resource_scarcity:
+    cooling_energy: {initial: 1.0, reference_cost: 1.0, margin: 0.0, initial_to_reference_cost_ratio: 1.0}
+  callback_timing_tolerance_steps: null
+  number_of_candidate_event_subscriptions: 0
+  number_of_misleading_observations: 1
+  number_of_possible_safety_rule_violations: 1
+seed: 31
+max_steps: 6
+time_step: 1.0
+
+task:
+  instructions: Keep the sector online and temperature at or below 8. The primary alarm can fail; use status and redundant evidence. Avoid emergency shutdown unless the physical state justifies it.
+  objectives:
+    - Keep sector_online = true.
+    - Keep sector temperature at or below 8.
+  safety_rules:
+    - Temperature must not exceed 8.
+
+graph:
+  nodes:
+    sector:
+      variables:
+        temperature:
+          initial: 4.0
+          drift: 0.7
+          hard_min: 0.0
+          hard_max: 12.0
+        sector_online:
+          initial: true
+  edges: []
+  resources:
+    cooling_energy:
+      initial: 1.0
+      min: 0.0
+      observable: true
+
+sensors:
+  - id: primary_temperature
+    target: sector.temperature
+    observable: true
+  - id: redundant_temperature
+    target: sector.temperature
+    observable: true
+  - id: online_sensor
+    target: sector.sector_online
+    observable: true
+
+actions:
+  - id: inspect_primary
+    operation: inspect
+    target: primary_temperature
+    description: Diagnose the primary temperature sensor.
+  - id: cool_sector
+    operation: adjust
+    target: sector.temperature
+    amount: -3.0
+    costs: {cooling_energy: 1.0}
+    description: Cool the sector by 3 using the available energy.
+  - id: emergency_shutdown
+    operation: set
+    target: sector.sector_online
+    value: false
+    role: distractor
+    description: Shut down the sector immediately.
+  - id: wait
+    operation: noop
+    description: Take no physical action.
+
+faults:
+  - id: primary_stale_high
+    at_step: 0
+    kind: sensor_stuck
+    target: primary_temperature
+    value: 9.0
+constraints:
+  - id: temperature_limit
+    kind: bounds
+    target: sector.temperature
+    max: 8.0
+goals:
+  - id: sector_remains_online
+    condition:
+      target: sector.sector_online
+      operator: eq
+      value: true
+  - id: finish_below_limit
+    condition:
+      target: sector.temperature
+      operator: le
+      value: 8.0
+
+observability:
+  full_state: false
+interaction:
+  mode: periodic
+  interval_steps: 1
+  max_actions_per_interaction: 1
+context:
+  mode: previous
+  history_limit: 2
+  include_action_outcomes: true
+  include_public_events: true
+evaluation:
+  required_inspections: [inspect_primary]
+  required_actions: [cool_sector]
+  forbidden_actions: [emergency_shutdown]
+  unnecessary_actions: [emergency_shutdown]
+  reference_action_count: 2
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: inspect_primary}]
+        callback: null
+        subscriptions: []
+        context_requests: [sensor:redundant_temperature]
+    - at_step: 4
+      decision:
+        actions: [{action_id: cool_sector}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+  default_decision:
+    actions: []
+    callback: null
+    subscriptions: []
+    context_requests: []
+reference:
+  kind: feasible_reference
+  evidence: scripted policy replay
+  optimality: not_claimed

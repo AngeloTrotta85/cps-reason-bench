@@ -1,0 +1,17 @@
+config_version: 1
+name: local_quickstart
+description: One operational smoke condition, not a scientific comparison.
+models:
+  - name: qwen3_5_0_8b_local
+    backend: ollama
+    model: qwen3.5:0.8b
+    base_url: http://localhost:11434
+    timeout_seconds: 300
+    decoding: {temperature: 0, top_p: 1, max_tokens: 2048, seed: null}
+    backend_parameters: {think: true, structured_output_mode: prompt_only}
+    response_normalization: {mode: none}
+benchmark:
+  suite: cps_reason_graph_v2_local_smoke
+repetitions: 1
+output_dir: ../../runs/local_quickstart
+runtime: {max_episodes: 1}

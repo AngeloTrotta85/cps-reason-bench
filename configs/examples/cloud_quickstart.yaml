@@ -1,0 +1,10 @@
+config_version: 1
+name: cloud_quickstart
+models:
+  - path: ../models/openrouter_example.yaml
+benchmark:
+  suite: cps_reason_graph_v2_cloud_qualification
+  limit: 1
+repetitions: 1
+output_dir: ../../runs/cloud_quickstart
+runtime: {max_episodes: 1, model_call_delay_seconds: 1}

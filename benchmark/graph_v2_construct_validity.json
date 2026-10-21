@@ -1,0 +1,1186 @@
+{
+  "benchmark": "cps_reason_graph_v2@1.0.0",
+  "checks": [
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small",
+        "repair_primary_path",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large",
+        "repair_primary_path",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a",
+        "repair_primary_path",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b",
+        "repair_primary_path",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive",
+        "repair_primary_path",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative",
+        "repair_primary_path",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source",
+        "repair_primary_path",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source",
+        "repair_primary_path",
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small",
+        "repair_primary_path",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large",
+        "repair_primary_path",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a",
+        "repair_primary_path",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b",
+        "repair_primary_path",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive",
+        "repair_primary_path",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative",
+        "repair_primary_path",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "adaptation",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source",
+        "repair_primary_path",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_adaptation_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source",
+        "repair_primary_path",
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "conditional_safety",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_conditional_safety_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "inspect_safeguard",
+        "enable_safeguard",
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "inspect_graph_evidence",
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "inspect_graph_evidence",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "interference",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_interference_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_small",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "prepare_pulse_large",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_a",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "prepare_pulse_b",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_positive",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "prepare_pulse_negative",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_source",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "prepare_pulse_source",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_small",
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "prepare_pulse_large",
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_a",
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "prepare_pulse_b",
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_positive",
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "prepare_pulse_negative",
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "planning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "prepare_pulse_source",
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_planning_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "prepare_pulse_source",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "prospective_reasoning",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_prospective_reasoning_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_bridge",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small",
+        "attribute_pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_bridge",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large",
+        "attribute_pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_1",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a",
+        "attribute_pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_core_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b",
+        "attribute_pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_2",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive",
+        "attribute_pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_core_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative",
+        "attribute_pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_3",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source",
+        "attribute_pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_core_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source",
+        "attribute_pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_core_4",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_small",
+        "attribute_pulse_small"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_core_4",
+      "pair_type": "coupling_strength",
+      "right_expected_actions": [
+        "pulse_large",
+        "attribute_pulse_large"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_1",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_a",
+        "attribute_pulse_a"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_entry_1",
+      "pair_type": "edge_direction",
+      "right_expected_actions": [
+        "pulse_b",
+        "attribute_pulse_b"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_2",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_positive",
+        "attribute_pulse_positive"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_entry_2",
+      "pair_type": "coupling_sign",
+      "right_expected_actions": [
+        "pulse_negative",
+        "attribute_pulse_negative"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    },
+    {
+      "correct_decision_changed": true,
+      "difficulty": "graph_v2_entry_3",
+      "family": "temporal_tracking",
+      "graph_changed": true,
+      "graph_ignoring_behavior_succeeds_on_right": false,
+      "left_expected_actions": [
+        "pulse_source",
+        "attribute_pulse_source"
+      ],
+      "left_reference_success": true,
+      "pair_id": "graph_v2_cf_temporal_tracking_graph_v2_entry_3",
+      "pair_type": "edge_state",
+      "right_expected_actions": [
+        "restore_primary",
+        "pulse_source",
+        "attribute_pulse_source"
+      ],
+      "right_reference_success": true,
+      "same_action_catalog": true,
+      "same_behavior_changes_trajectory": true,
+      "same_goals": true,
+      "same_non_topology_observation": true,
+      "status": "pass"
+    }
+  ],
+  "pair_count": 48,
+  "pair_type_counts": {
+    "coupling_sign": 12,
+    "coupling_strength": 12,
+    "edge_direction": 12,
+    "edge_state": 12
+  },
+  "report_hash": "12013457785a289ebaece79543b6ad7d8296bf9a8bbc2e8f3fef53457576ae5d",
+  "status": "pass"
+}

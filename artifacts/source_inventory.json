@@ -1,0 +1,1457 @@
+{
+  "scope": "Relative paths only; selective-copy provenance, not development private content",
+  "copied_sources": {
+    "src/cps_reason_bench/__init__.py": {
+      "source": "src/cps_reason_bench/__init__.py",
+      "sha256": "902d97c359ffa09afec84e71abd3a79fd848ab4d84ef9675655d81900c82056b",
+      "release_unchanged_at_inventory": false
+    },
+    "src/cps_reason_bench/aggregation.py": {
+      "source": "src/cps_reason_bench/aggregation.py",
+      "sha256": "a136481bd1027a357c3c8812439b4a9e71d12f699ddfef5ae32d09db3e9af0c2",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/catalog.py": {
+      "source": "src/cps_reason_bench/catalog.py",
+      "sha256": "6bc87ddc98993b50b21967d0a96c3ff35838c5e6655c488ed8bf479eeca5749a",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/cloud_reporting.py": {
+      "source": "src/cps_reason_bench/cloud_reporting.py",
+      "sha256": "1a0d2043cf5de79a8ac70d6336f8374a8751fc449526330cf9e7ef2e5e48a30a",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/config.py": {
+      "source": "src/cps_reason_bench/config.py",
+      "sha256": "b3a7ab5038c99213df69d7b93780e5994f83179520fa621a016b0a5af329e53b",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/context.py": {
+      "source": "src/cps_reason_bench/context.py",
+      "sha256": "6a6ab78ccc689083094b7adb6d909f8e8da65556fc4652206b1c1f61917e42d8",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/design.py": {
+      "source": "src/cps_reason_bench/design.py",
+      "sha256": "4419700b20e73af94ad3a96fb6894a9444b8f4dd6dad151ab03800e31ee3debf",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/experiments.py": {
+      "source": "src/cps_reason_bench/experiments.py",
+      "sha256": "10220559d33866f9da3171a7e436ea141bb0bdb59fb093a4d09e29a94c8a1db2",
+      "release_unchanged_at_inventory": false
+    },
+    "src/cps_reason_bench/family_reports.py": {
+      "source": "src/cps_reason_bench/family_reports.py",
+      "sha256": "88efc09f1b17a20a478fdf6a915cbe367205a4c88585967d230125e06d181ba5",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/generators.py": {
+      "source": "src/cps_reason_bench/generators.py",
+      "sha256": "8cb5159df79d54cae0452a8f3efcf2069973c45213db7ee726880b812c87f282",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/graph_v2.py": {
+      "source": "src/cps_reason_bench/graph_v2.py",
+      "sha256": "59c5727a45973bae4c79f947b4eab50d73b3bcfcc958618498a762325d1ed98f",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/graph_v2_validation.py": {
+      "source": "src/cps_reason_bench/graph_v2_validation.py",
+      "sha256": "528311b24b8c72a1935cd8184ed1a3024c19574e7c794db3141a48f18330eb4d",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/invariants.py": {
+      "source": "src/cps_reason_bench/invariants.py",
+      "sha256": "7e4a386c743cf8a60317f6a8d3fcc5eada8f5a888d94b9e7c68da52ed5efc647",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/metrics.py": {
+      "source": "src/cps_reason_bench/metrics.py",
+      "sha256": "941933665b08b949e3693f30a1fedeba551aa68892a63ccaf15b32efd2209b6e",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/__init__.py": {
+      "source": "src/cps_reason_bench/models/__init__.py",
+      "sha256": "f95c6ac96fbfb1c74efcefb92cd864788c701f818a4a0d6f101182c0c99120f2",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/base.py": {
+      "source": "src/cps_reason_bench/models/base.py",
+      "sha256": "c754750a045fcc64052eb13feca2481482219e3e94e26c95634694b2b5fe7d29",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/catalog.py": {
+      "source": "src/cps_reason_bench/models/catalog.py",
+      "sha256": "9ea816d5ef97d92baa1fbc6ef5ba798f8dcbe11c864782119cfd13f64aad0046",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/config.py": {
+      "source": "src/cps_reason_bench/models/config.py",
+      "sha256": "3197492b18bd533a3f8965ea2318233332223bba2b2fc6f00b99158faba366da",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/ollama.py": {
+      "source": "src/cps_reason_bench/models/ollama.py",
+      "sha256": "9a47e7414d5c720946e9774aaba3599f20baeda447a267418a430895d5eb452e",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/openai_compatible.py": {
+      "source": "src/cps_reason_bench/models/openai_compatible.py",
+      "sha256": "cf58ed7272128140aaa7ecd621f77f434e4ceb4e8ee1acf6bd6e4b060dc55e63",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/providers.py": {
+      "source": "src/cps_reason_bench/models/providers.py",
+      "sha256": "7c5755c2634790953ce17be6f2524482a972825dac55969796d9dcc772de26b4",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/registry.py": {
+      "source": "src/cps_reason_bench/models/registry.py",
+      "sha256": "b8efa9b828693f30044e7201cfcd8906773fa3220f4597108dafc1046f99c962",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/models/security.py": {
+      "source": "src/cps_reason_bench/models/security.py",
+      "sha256": "d52d8d8b5feaa323ada3e0bf57df922191431a1adb1b39f4b8ebadafce783bbc",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/paths.py": {
+      "source": "src/cps_reason_bench/paths.py",
+      "sha256": "95910206b3edb174642b684c6d0f17d97a107bfb7ec1a705cc5a35386aec0d90",
+      "release_unchanged_at_inventory": false
+    },
+    "src/cps_reason_bench/pilot_analysis.py": {
+      "source": "src/cps_reason_bench/pilot_analysis.py",
+      "sha256": "55b337babcb71c3c6d1b1add4ed19991bbc65071acff78325661800ebe9415a4",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/plotting.py": {
+      "source": "src/cps_reason_bench/plotting.py",
+      "sha256": "a614a4efa4a924f213f6f64619e69b8a7111aadfbd8562839864cbb7e70ae730",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/__init__.py": {
+      "source": "src/cps_reason_bench/policies/__init__.py",
+      "sha256": "ab993ecba8e494706438e3f818562c455a1c20b360d09070af59d5e7d4323cf1",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/base.py": {
+      "source": "src/cps_reason_bench/policies/base.py",
+      "sha256": "5889cfdc1242b04eb1743f9bac0b1a96bfb8f9cdf515a0b80dddc98f9cd3c4a1",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/llm.py": {
+      "source": "src/cps_reason_bench/policies/llm.py",
+      "sha256": "8b240942ab987493eb8cb54f302e7812c208de5cea1ea10390199377ab64f81f",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/public_information.py": {
+      "source": "src/cps_reason_bench/policies/public_information.py",
+      "sha256": "27f510d7143e1e58987f66159e28830ed477a52e5b737655b6d18e3ed5eb6a70",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/public_information_adapter.py": {
+      "source": "src/cps_reason_bench/policies/public_information_adapter.py",
+      "sha256": "394106b5faf710202e4fbaff971a2dd80cb6d438736cc8af190efb0d357630d9",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/random_policy.py": {
+      "source": "src/cps_reason_bench/policies/random_policy.py",
+      "sha256": "a45fbfe895d8c1014f80c4eddbb3f487e66831a187a48305eb5a2d888c15021d",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/policies/scripted.py": {
+      "source": "src/cps_reason_bench/policies/scripted.py",
+      "sha256": "f1dc4cd21656392fa05631a30f87d89363002c10fab8b1b62f52df69d99931ce",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/protocol.py": {
+      "source": "src/cps_reason_bench/protocol.py",
+      "sha256": "03415fa815c5e2c5aeae341ecd866988a91fa293ca067b134495f53d7af03292",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/provenance.py": {
+      "source": "src/cps_reason_bench/provenance.py",
+      "sha256": "e665eb277fcdb0e53481969eab044d98ff908d8d23e31919dfe62a40f01e4f02",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/public_events.py": {
+      "source": "src/cps_reason_bench/public_events.py",
+      "sha256": "0b96ccdd63c2997a887697b6d2c99d7192108ed2b2e03e318f04885d4b95bff0",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/references.py": {
+      "source": "src/cps_reason_bench/references.py",
+      "sha256": "f0cc9f4c3baf1c1044e4c01aa88d67c24e301cde50ddc0121a37968f26ec44b0",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/response_normalization.py": {
+      "source": "src/cps_reason_bench/response_normalization.py",
+      "sha256": "e6a2d3a6dadf540098faece4307c5f8471bde3497d184aea00bd91d86ebc044e",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/run_logging.py": {
+      "source": "src/cps_reason_bench/run_logging.py",
+      "sha256": "2aa21a5f83da81d893df5103658f470a9c32af7ffea756f1d0a50af158f980be",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/runner.py": {
+      "source": "src/cps_reason_bench/runner.py",
+      "sha256": "c8137691213fccd176a7e93206c35ff8e229f8be07dcc8f00808284461eeca0f",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/scheduling.py": {
+      "source": "src/cps_reason_bench/scheduling.py",
+      "sha256": "263ed692ba760a971520fe95835e7b2495ef81584aa64f1c9dce157f50041c93",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/simulator/__init__.py": {
+      "source": "src/cps_reason_bench/simulator/__init__.py",
+      "sha256": "560aaa6cde472a58afa68304ff1d58c285f0e6e9ccdb51cae9c6d92cdb59f943",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/simulator/graph.py": {
+      "source": "src/cps_reason_bench/simulator/graph.py",
+      "sha256": "78edeca958e269f234c03ad43cca94fda739227abe47d78f6f3f5afcc055e6b4",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/subscriptions.py": {
+      "source": "src/cps_reason_bench/subscriptions.py",
+      "sha256": "fe54d3d00b03a42ce93569e75861752e5d6e705bf3ce7d10acd96035243f9ca6",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/suites.py": {
+      "source": "src/cps_reason_bench/suites.py",
+      "sha256": "d79f3877d7c7691ccf948747e9c8a5a734a88aa6354f960beac809ff04f8cb59",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/types.py": {
+      "source": "src/cps_reason_bench/types.py",
+      "sha256": "7625b7c603a0d90e722be85c2f86daba8db15cf04132abee576bc5148b7a2e67",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/validation.py": {
+      "source": "src/cps_reason_bench/validation.py",
+      "sha256": "815df670f169d7a021bc203e076cfa0fd58cc7061d28acc1836d6e04de67506b",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/versions.py": {
+      "source": "src/cps_reason_bench/versions.py",
+      "sha256": "fe91a0d5e50dbc1285f9391fe17948c80a0c2fa3d95d9b489499214c40765548",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_adaptation_and_temporal.py": {
+      "source": "tests/test_adaptation_and_temporal.py",
+      "sha256": "a07f4418073023724f20985ebffe78a018b51291aeed384664d0e405d89cbb59",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_backends_and_versions.py": {
+      "source": "tests/test_backends_and_versions.py",
+      "sha256": "1f00e6054677e1ff8e7f71d7bf199ce4c7aaea0ce93862c9d80a3bc720af5516",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_config_and_simulator.py": {
+      "source": "tests/test_config_and_simulator.py",
+      "sha256": "22d9bfea9e81c495f58ec496c38e749090f865dd15d2533ef85bab131337cd0b",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_end_to_end_verification.py": {
+      "source": "tests/test_end_to_end_verification.py",
+      "sha256": "3946989623674e33b1ee212cca0b2e989d21c0db13a75413fa2c756d86d4d5cd",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_experiments_and_aggregation.py": {
+      "source": "tests/test_experiments_and_aggregation.py",
+      "sha256": "5f0d8a7e5913f6a16f1ce7470945ec2367ef717a876f072511ab67532080bc2a",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_foundation_benchmark.py": {
+      "source": "tests/test_foundation_benchmark.py",
+      "sha256": "c834e904449b149f776f2d7d39ab477cc89822166ba727fbf17e2a3738ffc093",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_graph_v2_engine.py": {
+      "source": "tests/test_graph_v2_engine.py",
+      "sha256": "c34c1e4018da48072bf66a6411eb4d6d721ada7b336918293fa03a4a1a9b61af",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_graph_v2_suite.py": {
+      "source": "tests/test_graph_v2_suite.py",
+      "sha256": "b6e0126516e697cacabec1ad3f187e0b669c93e374de64625989bd557ad206d8",
+      "release_unchanged_at_inventory": false
+    },
+    "tests/test_openai_cloud_backend.py": {
+      "source": "tests/test_openai_cloud_backend.py",
+      "sha256": "eec7cc3685dc1d309eb9c12f52b61977c6e69e2ca02478c2692f2d7de5aee093",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_plotting.py": {
+      "source": "tests/test_plotting.py",
+      "sha256": "0a03f93abc370690261cc0cb56cb898e82f0209059e249538defcb561741836e",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_protocol_and_interactions.py": {
+      "source": "tests/test_protocol_and_interactions.py",
+      "sha256": "13c693a40edf39b47b9272d9c3581ac4178323d3885737b885207a8a2b73aa9d",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_provenance_and_pilot_analysis.py": {
+      "source": "tests/test_provenance_and_pilot_analysis.py",
+      "sha256": "6dc44115d20c20a40f193ece407f78a96a13a97fa3360ff0663a5ee00ba8e0aa",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_reference_feedback_and_retries.py": {
+      "source": "tests/test_reference_feedback_and_retries.py",
+      "sha256": "b2999931564620448e5397a8d07096e25088409fa85a5b9104d55cdee85a2b2f",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_response_normalization.py": {
+      "source": "tests/test_response_normalization.py",
+      "sha256": "efbae66fb3c02ea75da17c1242101fa1f6c2176a212340dfc7030653eb94450a",
+      "release_unchanged_at_inventory": false
+    },
+    "tests/test_runner.py": {
+      "source": "tests/test_runner.py",
+      "sha256": "391da9161bfd3ae872b301053ef7424021f8109515340a7d8dadcbce55483731",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_suites_and_generation.py": {
+      "source": "tests/test_suites_and_generation.py",
+      "sha256": "7d9d5703d3007dca762ab07d376e86bd7554aa6160016918b018ac60528355b9",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/test_time_semantics.py": {
+      "source": "tests/test_time_semantics.py",
+      "sha256": "e1448db8a0d3a9fbd75af5765709b49ab70074181433f9da8d3b062992cd7068",
+      "release_unchanged_at_inventory": false
+    },
+    "examples/scenarios/adaptation_basic.yaml": {
+      "source": "examples/scenarios/adaptation_basic.yaml",
+      "sha256": "f508935772aaaedf9338e891f625a656d0fd8e8263289b798ec7ae71eecb9fe5",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/adaptation_basic.yaml": {
+      "source": "examples/scenarios/adaptation_basic.yaml",
+      "sha256": "f508935772aaaedf9338e891f625a656d0fd8e8263289b798ec7ae71eecb9fe5",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/conditional_safety_basic.yaml": {
+      "source": "examples/scenarios/conditional_safety_basic.yaml",
+      "sha256": "db66523080f76c01bc11b1344edae1c72068663ca799e63a835f63d92120c914",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/conditional_safety_basic.yaml": {
+      "source": "examples/scenarios/conditional_safety_basic.yaml",
+      "sha256": "db66523080f76c01bc11b1344edae1c72068663ca799e63a835f63d92120c914",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/adaptation_entry.yaml": {
+      "source": "examples/scenarios/foundation/adaptation_entry.yaml",
+      "sha256": "eb552d1d641de26864b3bb4caed36b053badfe768eaec6f2dc20badaa6fafa89",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/adaptation_entry.yaml": {
+      "source": "examples/scenarios/foundation/adaptation_entry.yaml",
+      "sha256": "eb552d1d641de26864b3bb4caed36b053badfe768eaec6f2dc20badaa6fafa89",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/conditional_entry.yaml": {
+      "source": "examples/scenarios/foundation/conditional_entry.yaml",
+      "sha256": "028527165659822d5451388ecc519b5328f539a1628c7761370e296d1b478dab",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/conditional_entry.yaml": {
+      "source": "examples/scenarios/foundation/conditional_entry.yaml",
+      "sha256": "028527165659822d5451388ecc519b5328f539a1628c7761370e296d1b478dab",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/interference_entry.yaml": {
+      "source": "examples/scenarios/foundation/interference_entry.yaml",
+      "sha256": "6e57ba488a1dc27b942e27a6ca443afed07da82aceb7f8dd79b10ffef688a830",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/interference_entry.yaml": {
+      "source": "examples/scenarios/foundation/interference_entry.yaml",
+      "sha256": "6e57ba488a1dc27b942e27a6ca443afed07da82aceb7f8dd79b10ffef688a830",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/planning_entry.yaml": {
+      "source": "examples/scenarios/foundation/planning_entry.yaml",
+      "sha256": "7c0a2b74f4a6ce42147abbabaef6e555599b48177dbef98ebb0e70ca0a277fca",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/planning_entry.yaml": {
+      "source": "examples/scenarios/foundation/planning_entry.yaml",
+      "sha256": "7c0a2b74f4a6ce42147abbabaef6e555599b48177dbef98ebb0e70ca0a277fca",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/prospective_entry.yaml": {
+      "source": "examples/scenarios/foundation/prospective_entry.yaml",
+      "sha256": "08a79e8221f79e1e9dc90827bd84721fb66897d2cf6ad631031e5429f2821f0c",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/prospective_entry.yaml": {
+      "source": "examples/scenarios/foundation/prospective_entry.yaml",
+      "sha256": "08a79e8221f79e1e9dc90827bd84721fb66897d2cf6ad631031e5429f2821f0c",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/foundation/temporal_entry.yaml": {
+      "source": "examples/scenarios/foundation/temporal_entry.yaml",
+      "sha256": "cacc64bc319dc253faded4e0cda7cbc5919c065bfebb6499d134d7b216b1d8cf",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/foundation/temporal_entry.yaml": {
+      "source": "examples/scenarios/foundation/temporal_entry.yaml",
+      "sha256": "cacc64bc319dc253faded4e0cda7cbc5919c065bfebb6499d134d7b216b1d8cf",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/interference_basic.yaml": {
+      "source": "examples/scenarios/interference_basic.yaml",
+      "sha256": "25e0bf15cddb4bee3952b295b9dd2d55c07c1e1efe234f0285feda32ef63d109",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/interference_basic.yaml": {
+      "source": "examples/scenarios/interference_basic.yaml",
+      "sha256": "25e0bf15cddb4bee3952b295b9dd2d55c07c1e1efe234f0285feda32ef63d109",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/planning_basic.yaml": {
+      "source": "examples/scenarios/planning_basic.yaml",
+      "sha256": "6c309450d30fecfd0fcd737edf78c27e0b043f8b78d2b6aa2cb731566e6c143a",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/planning_basic.yaml": {
+      "source": "examples/scenarios/planning_basic.yaml",
+      "sha256": "6c309450d30fecfd0fcd737edf78c27e0b043f8b78d2b6aa2cb731566e6c143a",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/prospective_basic.yaml": {
+      "source": "examples/scenarios/prospective_basic.yaml",
+      "sha256": "4fc11eb9f5d042b316f0e7afa80477801882d074fbd3cf956bcdf52e4c8e688c",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/prospective_basic.yaml": {
+      "source": "examples/scenarios/prospective_basic.yaml",
+      "sha256": "4fc11eb9f5d042b316f0e7afa80477801882d074fbd3cf956bcdf52e4c8e688c",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/protocol_sanity/direct_action.yaml": {
+      "source": "examples/scenarios/protocol_sanity/direct_action.yaml",
+      "sha256": "332c7e581e146d1c71f914ae3ffaae239bd7baf0c4b08ff543fb44dd15928cec",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/protocol_sanity/direct_action.yaml": {
+      "source": "examples/scenarios/protocol_sanity/direct_action.yaml",
+      "sha256": "332c7e581e146d1c71f914ae3ffaae239bd7baf0c4b08ff543fb44dd15928cec",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/protocol_sanity/direct_action_distractor.yaml": {
+      "source": "examples/scenarios/protocol_sanity/direct_action_distractor.yaml",
+      "sha256": "23f367cd086b34d86817399dfe759c328ed0d8063f2287afef87946be9d720ba",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/protocol_sanity/direct_action_distractor.yaml": {
+      "source": "examples/scenarios/protocol_sanity/direct_action_distractor.yaml",
+      "sha256": "23f367cd086b34d86817399dfe759c328ed0d8063f2287afef87946be9d720ba",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/protocol_sanity/explicit_noop.yaml": {
+      "source": "examples/scenarios/protocol_sanity/explicit_noop.yaml",
+      "sha256": "efdf5947acf97789e2108878242801fca509c55a011e29339992a1c561a42c9f",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/protocol_sanity/explicit_noop.yaml": {
+      "source": "examples/scenarios/protocol_sanity/explicit_noop.yaml",
+      "sha256": "efdf5947acf97789e2108878242801fca509c55a011e29339992a1c561a42c9f",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/protocol_sanity/simple_parameter.yaml": {
+      "source": "examples/scenarios/protocol_sanity/simple_parameter.yaml",
+      "sha256": "bbcae7c1447927d3f3a0223162ee83c2e0df182b1e92c830cdd98702ff5096ce",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/protocol_sanity/simple_parameter.yaml": {
+      "source": "examples/scenarios/protocol_sanity/simple_parameter.yaml",
+      "sha256": "bbcae7c1447927d3f3a0223162ee83c2e0df182b1e92c830cdd98702ff5096ce",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/scenarios/temporal_tracking_basic.yaml": {
+      "source": "examples/scenarios/temporal_tracking_basic.yaml",
+      "sha256": "88e414c4ca36b213188c4999791885357f5194cec7eef4d4cdf0181b3456af5d",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/scenarios/temporal_tracking_basic.yaml": {
+      "source": "examples/scenarios/temporal_tracking_basic.yaml",
+      "sha256": "88e414c4ca36b213188c4999791885357f5194cec7eef4d4cdf0181b3456af5d",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/core_v1.yaml": {
+      "source": "examples/suites/core_v1.yaml",
+      "sha256": "068f582189ec2557e3998882becee5f8062d2526f782a34c361a1f823d9c6cdf",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/core_v1.yaml": {
+      "source": "examples/suites/core_v1.yaml",
+      "sha256": "068f582189ec2557e3998882becee5f8062d2526f782a34c361a1f823d9c6cdf",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/core_v1_correction_assisted.yaml": {
+      "source": "examples/suites/core_v1_correction_assisted.yaml",
+      "sha256": "792144a90a0da6b246e4c00c580644e6e05637c7c28ea99f2a92f3d2ca8a968d",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/core_v1_correction_assisted.yaml": {
+      "source": "examples/suites/core_v1_correction_assisted.yaml",
+      "sha256": "792144a90a0da6b246e4c00c580644e6e05637c7c28ea99f2a92f3d2ca8a968d",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/core_v2.yaml": {
+      "source": "examples/suites/core_v2.yaml",
+      "sha256": "ff5aa9e106a5dd98c592d5b66d1833132aa997da883fc22f85aca65f161bb04c",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/core_v2.yaml": {
+      "source": "examples/suites/core_v2.yaml",
+      "sha256": "ff5aa9e106a5dd98c592d5b66d1833132aa997da883fc22f85aca65f161bb04c",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/core_v2_smoke.yaml": {
+      "source": "examples/suites/core_v2_smoke.yaml",
+      "sha256": "47da6e5f757f1e7cb6853ac5982b4583a15f3c1b67e4f6219e28edbc72bb560a",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/core_v2_smoke.yaml": {
+      "source": "examples/suites/core_v2_smoke.yaml",
+      "sha256": "47da6e5f757f1e7cb6853ac5982b4583a15f3c1b67e4f6219e28edbc72bb560a",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/foundation_v1.yaml": {
+      "source": "examples/suites/foundation_v1.yaml",
+      "sha256": "0c47386e53a19c2b6e9979f958b221b992d1586f40a545fbd77f84ce91a97262",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/foundation_v1.yaml": {
+      "source": "examples/suites/foundation_v1.yaml",
+      "sha256": "0c47386e53a19c2b6e9979f958b221b992d1586f40a545fbd77f84ce91a97262",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/foundation_v1_smoke.yaml": {
+      "source": "examples/suites/foundation_v1_smoke.yaml",
+      "sha256": "16a1e4d9a3174c26585df3248ae1b38b6ca9f440b0e47eacd8e5187d207b168c",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/foundation_v1_smoke.yaml": {
+      "source": "examples/suites/foundation_v1_smoke.yaml",
+      "sha256": "16a1e4d9a3174c26585df3248ae1b38b6ca9f440b0e47eacd8e5187d207b168c",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/suites/protocol_sanity_v1.yaml": {
+      "source": "examples/suites/protocol_sanity_v1.yaml",
+      "sha256": "e63622123f2b3f9a2958a03c584fd51ed099aa5cae8511988d5e45ba117b4e4b",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/examples/suites/protocol_sanity_v1.yaml": {
+      "source": "examples/suites/protocol_sanity_v1.yaml",
+      "sha256": "e63622123f2b3f9a2958a03c584fd51ed099aa5cae8511988d5e45ba117b4e4b",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/models/scripted_reference.yaml": {
+      "source": "examples/models/scripted_reference.yaml",
+      "sha256": "ae9128884ba4676cab0571539a4d0478cb1d172f437b7eef34a4f594d99a17a0",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/experiments/baseline_comparison.yaml": {
+      "source": "examples/experiments/baseline_comparison.yaml",
+      "sha256": "a23d708b87defbde7f7823732881aefb9586117878a91f8972377927a5a5ebb4",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/suites/graph_v2_cloud_qualification.yaml": {
+      "source": "benchmark/suites/graph_v2_cloud_qualification.yaml",
+      "sha256": "7dd452c012215230c2a77c267ddfa50b338f8a9e30e17498d05e557fecab6b34",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/benchmark/suites/graph_v2_cloud_qualification.yaml": {
+      "source": "benchmark/suites/graph_v2_cloud_qualification.yaml",
+      "sha256": "7dd452c012215230c2a77c267ddfa50b338f8a9e30e17498d05e557fecab6b34",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/suites/graph_v2_complete.yaml": {
+      "source": "benchmark/suites/graph_v2_complete.yaml",
+      "sha256": "8ee4efe6a862d42aa01bf852bb8ef38a08d7aa0c24ac16f742766bb1e824c513",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/benchmark/suites/graph_v2_complete.yaml": {
+      "source": "benchmark/suites/graph_v2_complete.yaml",
+      "sha256": "8ee4efe6a862d42aa01bf852bb8ef38a08d7aa0c24ac16f742766bb1e824c513",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/suites/graph_v2_local_smoke.yaml": {
+      "source": "benchmark/suites/graph_v2_local_smoke.yaml",
+      "sha256": "6729b4a1e5d5bbaa6734fdd5b98dfea2535f8009733f0f7bca1287e5b3f5c55b",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/benchmark/suites/graph_v2_local_smoke.yaml": {
+      "source": "benchmark/suites/graph_v2_local_smoke.yaml",
+      "sha256": "6729b4a1e5d5bbaa6734fdd5b98dfea2535f8009733f0f7bca1287e5b3f5c55b",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/suites/graph_v2_pilot.yaml": {
+      "source": "benchmark/suites/graph_v2_pilot.yaml",
+      "sha256": "6cd13780a995359c6731d1f185b61595853ed9c8f66b7ed37709823ac9c4974f",
+      "release_unchanged_at_inventory": true
+    },
+    "src/cps_reason_bench/data/benchmark/suites/graph_v2_pilot.yaml": {
+      "source": "benchmark/suites/graph_v2_pilot.yaml",
+      "sha256": "6cd13780a995359c6731d1f185b61595853ed9c8f66b7ed37709823ac9c4974f",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/graph_v2_coverage_report.json": {
+      "source": "benchmark/graph_v2_coverage_report.json",
+      "sha256": "bfaa7acbf830a45c3211cffb620aa4bb9779ab001aae471235d3864863ced89f",
+      "release_unchanged_at_inventory": true
+    },
+    "benchmark/graph_v2_construct_validity.json": {
+      "source": "benchmark/graph_v2_construct_validity.json",
+      "sha256": "f417777fba8a121da05ccbcffa44b1415d6ac41564910e7cdab0b31047dcc9b3",
+      "release_unchanged_at_inventory": true
+    },
+    "LICENSE": {
+      "source": "LICENSE",
+      "sha256": "9eb07562c732a55d9c66c102dca5eef01a582518b71bc047eb86e4649e16e358",
+      "release_unchanged_at_inventory": true
+    },
+    "RELEASE_AUDIT.md": {
+      "source": "RELEASE_AUDIT.md",
+      "sha256": "372dc592041a6db92cd392a27600b51bfbb2137cb7d6b0afd8e0829b3cc0fce3",
+      "release_unchanged_at_inventory": true
+    },
+    "examples/models/random_baseline.yaml": {
+      "source": "examples/models/random_baseline.yaml",
+      "sha256": "7af4de310ae0634472e8beda8fb84ae3bd99d884018d00bc1ebf411ef6f91ef1",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/__init__.py": {
+      "source": "tests/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "release_unchanged_at_inventory": true
+    },
+    "tests/custom_backend.py": {
+      "source": "tests/custom_backend.py",
+      "sha256": "f9347c99f32fccf05b0ff5cc391b7eba05f578f6809fd03a2d91f8dfa2b11e6f",
+      "release_unchanged_at_inventory": true
+    }
+  },
+  "development_python_modules": [
+    {
+      "path": "src/cps_reason_bench/__init__.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/__main__.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/addon_compatibility.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/aggregation.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/audit.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/campaign_plotting.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/catalog.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/claude_interface_audit.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/claude_interface_reporting.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/claude_normalized_addon.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/cli.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/cloud_reporting.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/comprehensive.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/comprehensive_plotting.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/config.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/context.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/costs.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/design.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/experiments.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/family_reports.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/final_mixed_campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/final_preflight.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/generators.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_budget_freeze.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_final_audit.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_local_reuse.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_r5_freeze.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_reporting.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_unattended_campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/graph_v2_validation.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/invariants.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/launcher.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/local_parallel.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/local_parallel_compatibility.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/metrics.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/model_checks.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/model_commands.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/model_selection.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/models/__init__.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/base.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/catalog.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/config.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/discovery.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/models/ollama.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/openai_compatible.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/providers.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/registry.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/models/security.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/offline_test_runner.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/openrouter_qualification.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/paths.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/pilot_analysis.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/plotting.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/__init__.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/base.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/llm.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/public_information.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/public_information_adapter.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/random_policy.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/policies/scripted.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/protocol.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/provenance.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/provider_checks.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/public_events.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/public_information_analysis.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/public_information_calibration.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/qualification.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/references.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/release_candidate_audit.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/response_normalization.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/run_logging.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/runner.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/scheduling.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/selected_campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/simulator/__init__.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/simulator/graph.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/stronger_graph_campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/subscriptions.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/suites.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/total_campaign.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/types.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/unattended.py",
+      "decision": "ARCHIVE_NOT_PUBLIC",
+      "reason": "Historical campaign, discovery, launcher, add-on or paper-specific audit/report machinery"
+    },
+    {
+      "path": "src/cps_reason_bench/validation.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    },
+    {
+      "path": "src/cps_reason_bench/versions.py",
+      "decision": "INCLUDE",
+      "reason": "Runtime/import closure or release wrapper entry point"
+    }
+  ],
+  "development_tests": [
+    {
+      "path": "tests/__init__.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/custom_backend.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_adaptation_and_temporal.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_astra_addon.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_backends_and_versions.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_benchmark_handbook_catalog.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_claude_normalized_addon.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_cloud_campaign_features.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_comprehensive_design.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_config_and_simulator.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_end_to_end_verification.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_experiment_launcher.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_experiments_and_aggregation.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_family_progressions_and_regression.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_final_mixed_campaign.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_final_preflight.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_foundation_benchmark.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_full_campaign.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_graph_v2_engine.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_graph_v2_interim_report.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_graph_v2_local_reuse.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_graph_v2_recover_launcher.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_graph_v2_suite.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_graph_v2_unattended.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_local_parallel.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_local_parallel_compatibility.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_model_registry_and_providers.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_offline_test_runner.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_openai_cloud_backend.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_openrouter_qualification.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_plotting.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_protocol_and_interactions.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_provenance_and_pilot_analysis.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_public_information_calibration.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_qualification.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_reference_feedback_and_retries.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_release_candidate_audit.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_response_normalization.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_runner.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_stronger_graph_campaign.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_suite_audit_catalog_reports.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    },
+    {
+      "path": "tests/test_suites_and_generation.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_time_semantics.py",
+      "decision": "INCLUDE_AFTER_CLEANUP",
+      "reason": "Offline runtime/provider/generation regression coverage"
+    },
+    {
+      "path": "tests/test_total_campaign.py",
+      "decision": "EXCLUDE",
+      "reason": "Depends on omitted campaign/launcher/paper-analysis features or archival inventories"
+    }
+  ],
+  "excluded_unused_data": [
+    {
+      "path": "examples/suites/comprehensive_design_manifest.json",
+      "source": "examples/suites/comprehensive_design_manifest.json",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/comprehensive_design_manifest.json",
+      "source": "examples/suites/comprehensive_design_manifest.json",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/factorial_full_v1.yaml",
+      "source": "examples/suites/factorial_full_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/factorial_full_v1.yaml",
+      "source": "examples/suites/factorial_full_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/factorial_pairwise_coverage.json",
+      "source": "examples/suites/factorial_pairwise_coverage.json",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/factorial_pairwise_coverage.json",
+      "source": "examples/suites/factorial_pairwise_coverage.json",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/factorial_pairwise_v1.yaml",
+      "source": "examples/suites/factorial_pairwise_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/factorial_pairwise_v1.yaml",
+      "source": "examples/suites/factorial_pairwise_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/model_variability_v1.yaml",
+      "source": "examples/suites/model_variability_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/model_variability_v1.yaml",
+      "source": "examples/suites/model_variability_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_pilot_v1.yaml",
+      "source": "examples/suites/robustness_pilot_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_pilot_v1.yaml",
+      "source": "examples/suites/robustness_pilot_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_temporal_current_control_v1.yaml",
+      "source": "examples/suites/robustness_temporal_current_control_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_temporal_current_control_v1.yaml",
+      "source": "examples/suites/robustness_temporal_current_control_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_temporal_history_v1.yaml",
+      "source": "examples/suites/robustness_temporal_history_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_temporal_history_v1.yaml",
+      "source": "examples/suites/robustness_temporal_history_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_temporal_pilot_current_control_v1.yaml",
+      "source": "examples/suites/robustness_temporal_pilot_current_control_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_temporal_pilot_current_control_v1.yaml",
+      "source": "examples/suites/robustness_temporal_pilot_current_control_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_temporal_pilot_history_v1.yaml",
+      "source": "examples/suites/robustness_temporal_pilot_history_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_temporal_pilot_history_v1.yaml",
+      "source": "examples/suites/robustness_temporal_pilot_history_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/robustness_v1.yaml",
+      "source": "examples/suites/robustness_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/robustness_v1.yaml",
+      "source": "examples/suites/robustness_v1.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/temporal_context_current_control.yaml",
+      "source": "examples/suites/temporal_context_current_control.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/temporal_context_current_control.yaml",
+      "source": "examples/suites/temporal_context_current_control.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "examples/suites/temporal_context_history.yaml",
+      "source": "examples/suites/temporal_context_history.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    },
+    {
+      "path": "src/cps_reason_bench/data/examples/suites/temporal_context_history.yaml",
+      "source": "examples/suites/temporal_context_history.yaml",
+      "decision": "EXCLUDE",
+      "reason": "Unused historical campaign/factorial/robustness fixture; no retained test or runtime file dependency"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+config_version: 1
+name: local_full_benchmark
+description: Complete 240-condition suite, three repetitions; potentially very slow.
+models:
+  - path: ../models/qwen3_5_0_8b.yaml
+benchmark:
+  suite: cps_reason_graph_v2
+repetitions: 3
+output_dir: ../../runs/local_full_benchmark
+runtime: {max_episodes: 720}

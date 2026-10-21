@@ -1,0 +1,8 @@
+name: qwen3_5_0_8b_local
+backend: ollama
+model: qwen3.5:0.8b
+base_url: http://localhost:11434
+timeout_seconds: 1800
+decoding: {temperature: 0, top_p: 1, max_tokens: 2048, seed: null}
+backend_parameters: {think: true, structured_output_mode: prompt_only}
+response_normalization: {mode: none}

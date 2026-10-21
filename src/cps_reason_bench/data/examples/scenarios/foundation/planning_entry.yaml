@@ -1,0 +1,62 @@
+schema_version: 1
+name: foundation_planning_entry
+description: Enable one fully visible process output with a direct action.
+task_family: planning
+difficulty: 1
+difficulty_level: entry_1
+difficulty_profile:
+  family_parameters: {content_revision: foundation_v1}
+seed: 802
+max_steps: 4
+time_step: 1.0
+
+task:
+  instructions: Enable the process output using the available controls.
+  objectives: [Finish with output enabled.]
+  terminate_on_goals: true
+graph:
+  nodes:
+    plant:
+      variables:
+        power_ready: {initial: false}
+        component_ready: {initial: false}
+        output_enabled: {initial: false}
+  edges: []
+  resources:
+    energy: {initial: 6.0, min: 0.0, observable: true}
+sensors:
+  - {id: power_sensor, target: plant.power_ready, observable: true}
+  - {id: component_sensor, target: plant.component_ready, observable: true}
+  - {id: output_sensor, target: plant.output_enabled, observable: true}
+actions:
+  - id: activate_output
+    operation: set
+    target: plant.output_enabled
+    value: true
+    costs: {energy: 1.0}
+    description: Enable process output.
+  - {id: wait, operation: noop, description: Leave the plant unchanged.}
+faults: []
+constraints: []
+goals:
+  - id: output_enabled
+    status_observable: true
+    condition: {target: plant.output_enabled, operator: eq, value: true}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: history, history_limit: 4, include_action_outcomes: true}
+evaluation:
+  required_actions: [activate_output]
+  expected_action_sequence: [activate_output]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_expected_sequence: true
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: activate_output}], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted direct-action replay
+  optimality: not_claimed

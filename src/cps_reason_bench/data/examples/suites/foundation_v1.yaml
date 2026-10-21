@@ -1,0 +1,163 @@
+suite_schema_version: 1
+name: cps_reason_foundation_v1
+version: 1.0.0
+description: Twenty-four additive foundation tasks spanning entry_1 through bridge for six reasoning families.
+task_families:
+  - prospective_reasoning
+  - planning
+  - interference
+  - conditional_safety
+  - adaptation
+  - temporal_tracking
+difficulty_configurations:
+  prospective_reasoning:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+  planning:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+  interference:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+  conditional_safety:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+  adaptation:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+  temporal_tracking:
+    entry_1: {content_revision: foundation_v1}
+    entry_2: {content_revision: foundation_v1}
+    entry_3: {content_revision: foundation_v1}
+    bridge: {content_revision: foundation_v1}
+interaction: {source: scenario}
+context: {source: scenario}
+protocol:
+  prompt: {id: cps-reason-json-control, version: 2.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy: {name: strict_zero_correction, max_corrections: 0}
+evaluation: {}
+metric_requirements:
+  prospective_reasoning:
+    - general.task_success
+    - task_specific.callback_count
+    - task_specific.useful_subscription_count
+    - task_specific.missed_relevant_events
+    - task_specific.reaction_delay_steps
+  planning:
+    - general.task_success
+    - task_specific.planning_action_attempts
+    - task_specific.prerequisite_violations
+    - task_specific.planning_resource_consumption
+  interference:
+    - general.task_success
+    - task_specific.misleading_action_rate
+    - task_specific.unnecessary_emergency_action_rate
+    - task_specific.evidence_gathering_action_count
+  conditional_safety:
+    - general.task_success
+    - task_specific.missed_falsifying_observations
+    - task_specific.unnecessary_inspection_count
+    - task_specific.final_rule_satisfaction
+  adaptation:
+    - general.task_success
+    - task_specific.adaptation_success
+    - task_specific.adaptation_delay_steps
+    - task_specific.obsolete_actions_before_sufficient_evidence
+    - task_specific.obsolete_actions_after_sufficient_evidence
+  temporal_tracking:
+    - general.task_success
+    - task_specific.temporal_reasoning_success
+    - task_specific.delayed_effect_detection_accuracy
+    - task_specific.delayed_effect_attribution_accuracy
+    - task_specific.false_temporal_associations
+    - task_specific.missed_temporal_dependencies
+scenarios:
+  - id: prospective_entry_1
+    generator: {family: prospective_reasoning, level: entry_1, version: 3.0.0, generation_seed: 3101, template: ../scenarios/foundation/prospective_entry.yaml}
+    simulator_seeds: [4101]
+  - id: prospective_entry_2
+    generator: {family: prospective_reasoning, level: entry_2, version: 3.0.0, generation_seed: 3102, template: ../scenarios/foundation/prospective_entry.yaml}
+    simulator_seeds: [4102]
+  - id: prospective_entry_3
+    generator: {family: prospective_reasoning, level: entry_3, version: 3.0.0, generation_seed: 3103, template: ../scenarios/foundation/prospective_entry.yaml}
+    simulator_seeds: [4103]
+  - id: prospective_bridge
+    generator: {family: prospective_reasoning, level: bridge, version: 3.0.0, generation_seed: 3104, template: ../scenarios/foundation/prospective_entry.yaml}
+    simulator_seeds: [4104]
+
+  - id: planning_entry_1
+    generator: {family: planning, level: entry_1, version: 3.0.0, generation_seed: 3201, template: ../scenarios/foundation/planning_entry.yaml}
+    simulator_seeds: [4201]
+  - id: planning_entry_2
+    generator: {family: planning, level: entry_2, version: 3.0.0, generation_seed: 3202, template: ../scenarios/foundation/planning_entry.yaml}
+    simulator_seeds: [4202]
+  - id: planning_entry_3
+    generator: {family: planning, level: entry_3, version: 3.0.0, generation_seed: 3203, template: ../scenarios/foundation/planning_entry.yaml}
+    simulator_seeds: [4203]
+  - id: planning_bridge
+    generator: {family: planning, level: bridge, version: 3.0.0, generation_seed: 3204, template: ../scenarios/foundation/planning_entry.yaml}
+    simulator_seeds: [4204]
+
+  - id: interference_entry_1
+    generator: {family: interference, level: entry_1, version: 3.0.0, generation_seed: 3301, template: ../scenarios/foundation/interference_entry.yaml}
+    simulator_seeds: [4301]
+  - id: interference_entry_2
+    generator: {family: interference, level: entry_2, version: 3.0.0, generation_seed: 3302, template: ../scenarios/foundation/interference_entry.yaml}
+    simulator_seeds: [4302]
+  - id: interference_entry_3
+    generator: {family: interference, level: entry_3, version: 3.0.0, generation_seed: 3303, template: ../scenarios/foundation/interference_entry.yaml}
+    simulator_seeds: [4303]
+  - id: interference_bridge
+    generator: {family: interference, level: bridge, version: 3.0.0, generation_seed: 3304, template: ../scenarios/foundation/interference_entry.yaml}
+    simulator_seeds: [4304]
+
+  - id: conditional_entry_1
+    generator: {family: conditional_safety, level: entry_1, version: 3.0.0, generation_seed: 3401, template: ../scenarios/foundation/conditional_entry.yaml}
+    simulator_seeds: [4401]
+  - id: conditional_entry_2
+    generator: {family: conditional_safety, level: entry_2, version: 3.0.0, generation_seed: 3402, template: ../scenarios/foundation/conditional_entry.yaml}
+    simulator_seeds: [4402]
+  - id: conditional_entry_3
+    generator: {family: conditional_safety, level: entry_3, version: 3.0.0, generation_seed: 3403, template: ../scenarios/foundation/conditional_entry.yaml}
+    simulator_seeds: [4403]
+  - id: conditional_bridge
+    generator: {family: conditional_safety, level: bridge, version: 3.0.0, generation_seed: 3404, template: ../scenarios/foundation/conditional_entry.yaml}
+    simulator_seeds: [4404]
+
+  - id: adaptation_entry_1
+    generator: {family: adaptation, level: entry_1, version: 3.0.0, generation_seed: 3501, template: ../scenarios/foundation/adaptation_entry.yaml}
+    simulator_seeds: [4501]
+  - id: adaptation_entry_2
+    generator: {family: adaptation, level: entry_2, version: 3.0.0, generation_seed: 3502, template: ../scenarios/foundation/adaptation_entry.yaml}
+    simulator_seeds: [4502]
+  - id: adaptation_entry_3
+    generator: {family: adaptation, level: entry_3, version: 3.0.0, generation_seed: 3503, template: ../scenarios/foundation/adaptation_entry.yaml}
+    simulator_seeds: [4503]
+  - id: adaptation_bridge
+    generator: {family: adaptation, level: bridge, version: 3.0.0, generation_seed: 3504, template: ../scenarios/foundation/adaptation_entry.yaml}
+    simulator_seeds: [4504]
+
+  - id: temporal_entry_1
+    generator: {family: temporal_tracking, level: entry_1, version: 3.0.0, generation_seed: 3601, template: ../scenarios/foundation/temporal_entry.yaml}
+    simulator_seeds: [4601]
+  - id: temporal_entry_2
+    generator: {family: temporal_tracking, level: entry_2, version: 3.0.0, generation_seed: 3602, template: ../scenarios/foundation/temporal_entry.yaml}
+    simulator_seeds: [4602]
+  - id: temporal_entry_3
+    generator: {family: temporal_tracking, level: entry_3, version: 3.0.0, generation_seed: 3603, template: ../scenarios/foundation/temporal_entry.yaml}
+    simulator_seeds: [4603]
+  - id: temporal_bridge
+    generator: {family: temporal_tracking, level: bridge, version: 3.0.0, generation_seed: 3604, template: ../scenarios/foundation/temporal_entry.yaml}
+    simulator_seeds: [4604]

@@ -1,0 +1,87 @@
+schema_version: 1
+name: foundation_temporal_entry
+description: Associate one explicit prior command with its one-step delayed response.
+task_family: temporal_tracking
+difficulty: 1
+difficulty_level: entry_1
+difficulty_profile:
+  family_parameters: {content_revision: foundation_v1}
+seed: 806
+max_steps: 3
+time_step: 1.0
+
+task:
+  instructions: Issue the requested channel command, then route its response after the documented delay using the explicit interaction context.
+  objectives: [Process one delayed response through its matching channel.]
+  terminate_on_goals: true
+graph:
+  nodes:
+    actuator_bank:
+      variables:
+        requested_channel: {initial: A}
+        response_ready: {initial: false}
+        response_source: {initial: none}
+        processed_count: {initial: 0, hard_min: 0, hard_max: 1}
+  edges: []
+  resources:
+    command_budget: {initial: 1.0, min: 0.0, observable: true}
+sensors:
+  - {id: request_sensor, target: actuator_bank.requested_channel, observable: true}
+  - {id: response_sensor, target: actuator_bank.response_ready, observable: true}
+actions:
+  - id: start_channel_a
+    operation: set
+    target: actuator_bank.response_ready
+    value: true
+    effect_delay_steps: 1
+    costs: {command_budget: 1.0}
+    preconditions: [{target: actuator_bank.response_ready, operator: eq, value: false}]
+    additional_effects: [{operation: set, target: actuator_bank.response_source, value: A}]
+    description: Issue the requested channel A command; its response appears after one step.
+  - id: route_channel_a
+    operation: set
+    target: actuator_bank.response_ready
+    value: false
+    preconditions:
+      - {target: actuator_bank.response_ready, operator: eq, value: true}
+      - {target: actuator_bank.response_source, operator: eq, value: A}
+    additional_effects: [{operation: adjust, target: actuator_bank.processed_count, amount: 1}]
+    description: Route the available channel A response.
+  - {id: wait, operation: noop, description: Wait without issuing or routing a command.}
+faults: []
+constraints: []
+goals:
+  - {id: response_processed, condition: {target: actuator_bank.processed_count, operator: ge, value: 1}}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: previous, history_limit: 2, include_action_outcomes: true, include_public_events: false}
+evaluation:
+  required_actions: [start_channel_a, route_channel_a]
+  expected_action_sequence: [start_channel_a, route_channel_a]
+  expected_actions_by_step: {0: start_channel_a, 1: route_channel_a}
+  reference_action_count: 2
+  success_requires_required_actions: true
+  success_requires_temporal_tracking: true
+  success_requires_safety: true
+  temporal:
+    required_temporal_distance: 1
+    action_effect_delay_steps: 1
+    relevant_history_items: 1
+    temporal_distractor_count: 0
+    overlapping_causal_actions: 0
+    selector_sensors: [request_sensor]
+    response_sensor: response_sensor
+    initiation_to_response: {start_channel_a: route_channel_a}
+    attribution_actions: [route_channel_a]
+    current_only_expected_insufficient: false
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: start_channel_a}], callback: null, subscriptions: [], context_requests: []}
+    - at_step: 1
+      decision: {actions: [{action_id: route_channel_a}], callback: null, subscriptions: [], context_requests: []}
+  default_decision: {actions: [], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted delayed-effect association using explicit prior context
+  optimality: not_claimed

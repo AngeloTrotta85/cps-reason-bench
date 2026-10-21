@@ -1,0 +1,27 @@
+experiment_schema_version: 1
+name: baseline_comparison
+suites:
+  - ../suites/core_v1.yaml
+models:
+  - ../models/scripted_reference.yaml
+  - ../models/random_baseline.yaml
+filters:
+  task_families: []
+  difficulty_levels: [basic]
+repetitions: 2
+output_dir: ../../runs/baseline_comparison
+continue_on_error: false
+aggregation:
+  group_by:
+    - suite_name
+    - suite_version
+    - model_configuration
+    - backend
+    - model
+    - task_family
+    - difficulty_level
+    - scenario
+    - simulator_seed
+    - interaction_mode
+    - context_mode
+

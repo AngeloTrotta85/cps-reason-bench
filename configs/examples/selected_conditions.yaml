@@ -1,0 +1,16 @@
+config_version: 1
+name: selected_conditions
+models:
+  - name: scripted_reference
+    backend: scripted
+benchmark:
+  suite: cps_reason_graph_v2
+  families: [planning]
+  roles: [i02, i03]
+  profiles: [graph_v2_entry_1]
+  condition_ids:
+    - graph_v2_planning_graph_v2_entry_1_i02
+    - graph_v2_planning_graph_v2_entry_1_i03
+repetitions: 1
+output_dir: ../../runs/selected_conditions
+runtime: {max_episodes: 2}

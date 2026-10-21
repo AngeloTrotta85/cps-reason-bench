@@ -1,0 +1,342 @@
+{
+  "benchmark": "cps_reason_graph_v2@1.0.0",
+  "checks": [
+    {
+      "evidence": {
+        "adaptation": 40,
+        "conditional_safety": 40,
+        "interference": 40,
+        "planning": 40,
+        "prospective_reasoning": 40,
+        "temporal_tracking": 40
+      },
+      "id": "six_families",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "graph_v2_bridge": 30,
+        "graph_v2_core_1": 30,
+        "graph_v2_core_2": 30,
+        "graph_v2_core_3": 30,
+        "graph_v2_core_4": 30,
+        "graph_v2_entry_1": 30,
+        "graph_v2_entry_2": 30,
+        "graph_v2_entry_3": 30
+      },
+      "id": "eight_levels",
+      "status": "pass"
+    },
+    {
+      "evidence": 240,
+      "id": "primary_condition_count",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "adaptation/graph_v2_bridge": 5,
+        "adaptation/graph_v2_core_1": 5,
+        "adaptation/graph_v2_core_2": 5,
+        "adaptation/graph_v2_core_3": 5,
+        "adaptation/graph_v2_core_4": 5,
+        "adaptation/graph_v2_entry_1": 5,
+        "adaptation/graph_v2_entry_2": 5,
+        "adaptation/graph_v2_entry_3": 5,
+        "conditional_safety/graph_v2_bridge": 5,
+        "conditional_safety/graph_v2_core_1": 5,
+        "conditional_safety/graph_v2_core_2": 5,
+        "conditional_safety/graph_v2_core_3": 5,
+        "conditional_safety/graph_v2_core_4": 5,
+        "conditional_safety/graph_v2_entry_1": 5,
+        "conditional_safety/graph_v2_entry_2": 5,
+        "conditional_safety/graph_v2_entry_3": 5,
+        "interference/graph_v2_bridge": 5,
+        "interference/graph_v2_core_1": 5,
+        "interference/graph_v2_core_2": 5,
+        "interference/graph_v2_core_3": 5,
+        "interference/graph_v2_core_4": 5,
+        "interference/graph_v2_entry_1": 5,
+        "interference/graph_v2_entry_2": 5,
+        "interference/graph_v2_entry_3": 5,
+        "planning/graph_v2_bridge": 5,
+        "planning/graph_v2_core_1": 5,
+        "planning/graph_v2_core_2": 5,
+        "planning/graph_v2_core_3": 5,
+        "planning/graph_v2_core_4": 5,
+        "planning/graph_v2_entry_1": 5,
+        "planning/graph_v2_entry_2": 5,
+        "planning/graph_v2_entry_3": 5,
+        "prospective_reasoning/graph_v2_bridge": 5,
+        "prospective_reasoning/graph_v2_core_1": 5,
+        "prospective_reasoning/graph_v2_core_2": 5,
+        "prospective_reasoning/graph_v2_core_3": 5,
+        "prospective_reasoning/graph_v2_core_4": 5,
+        "prospective_reasoning/graph_v2_entry_1": 5,
+        "prospective_reasoning/graph_v2_entry_2": 5,
+        "prospective_reasoning/graph_v2_entry_3": 5,
+        "temporal_tracking/graph_v2_bridge": 5,
+        "temporal_tracking/graph_v2_core_1": 5,
+        "temporal_tracking/graph_v2_core_2": 5,
+        "temporal_tracking/graph_v2_core_3": 5,
+        "temporal_tracking/graph_v2_core_4": 5,
+        "temporal_tracking/graph_v2_entry_1": 5,
+        "temporal_tracking/graph_v2_entry_2": 5,
+        "temporal_tracking/graph_v2_entry_3": 5
+      },
+      "id": "five_instances_per_family_level",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "1": 48,
+          "2": 72,
+          "3": 72,
+          "4-8": 48
+        },
+        "missing": []
+      },
+      "id": "coverage_node_count_category",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "alternative_path": 24,
+          "branch_tree": 24,
+          "chain": 120,
+          "single_component": 48,
+          "sparse_mesh": 24
+        },
+        "missing": []
+      },
+      "id": "coverage_topology_type",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "directed": 120,
+          "mixed": 48,
+          "none": 48,
+          "undirected": 24
+        },
+        "missing": []
+      },
+      "id": "coverage_directionality",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "competing_influences": 48,
+          "multiple_incoming": 24,
+          "none": 48,
+          "short_propagation_chain": 48,
+          "single_edge": 72
+        },
+        "missing": []
+      },
+      "id": "coverage_coupling_type",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "alternative_route": 24,
+          "edge_disabled": 12,
+          "edge_restored": 24,
+          "static": 180
+        },
+        "missing": []
+      },
+      "id": "coverage_topology_state",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "delayed_remote_sensor": 54,
+          "edge_hidden_inferred": 36,
+          "edge_visible": 60,
+          "full_local": 48,
+          "hidden_neighbor": 24,
+          "remote_sensor": 18
+        },
+        "missing": []
+      },
+      "id": "coverage_observability_type",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "edge": 30,
+          "local": 16,
+          "multiple_simultaneous": 2,
+          "none": 96,
+          "propagated": 64,
+          "remote": 32
+        },
+        "missing": []
+      },
+      "id": "coverage_fault_locality",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "counts": {
+          "coupling_changes_action": 48,
+          "direction_changes_action": 24,
+          "edge_failure_changes_action": 48,
+          "topology_changes_action": 72,
+          "topology_irrelevant_baseline": 48
+        },
+        "missing": []
+      },
+      "id": "coverage_graph_dependent_decision_property",
+      "status": "pass"
+    },
+    {
+      "evidence": 192,
+      "id": "nonzero_multi_node",
+      "status": "pass"
+    },
+    {
+      "evidence": 192,
+      "id": "nonzero_edges",
+      "status": "pass"
+    },
+    {
+      "evidence": 168,
+      "id": "nonzero_directed",
+      "status": "pass"
+    },
+    {
+      "evidence": 72,
+      "id": "nonzero_undirected",
+      "status": "pass"
+    },
+    {
+      "evidence": 192,
+      "id": "nonzero_coupling",
+      "status": "pass"
+    },
+    {
+      "evidence": 100,
+      "id": "nonzero_topology_change",
+      "status": "pass"
+    },
+    {
+      "evidence": 32,
+      "id": "nonzero_edge_fault",
+      "status": "pass"
+    },
+    {
+      "evidence": 84,
+      "id": "nonzero_hidden_edge_state",
+      "status": "pass"
+    },
+    {
+      "evidence": 84,
+      "id": "nonzero_multi_action",
+      "status": "pass"
+    },
+    {
+      "evidence": 12,
+      "id": "nonzero_three_action",
+      "status": "pass"
+    },
+    {
+      "evidence": 48,
+      "id": "nonzero_atomic_batch",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "member_counts": {
+          "2": 48
+        },
+        "pair_count": 48
+      },
+      "id": "counterfactual_pairs",
+      "status": "pass"
+    }
+  ],
+  "coverage_matrix_hash": "e8f2ce9fa8e479eccba25211b7c7fb26383e3244617d96ad93ffa66a805f8959",
+  "distributions": {
+    "coupling_type": {
+      "competing_influences": 48,
+      "multiple_incoming": 24,
+      "none": 48,
+      "short_propagation_chain": 48,
+      "single_edge": 72
+    },
+    "directionality": {
+      "directed": 120,
+      "mixed": 48,
+      "none": 48,
+      "undirected": 24
+    },
+    "fault_locality": {
+      "edge": 30,
+      "local": 16,
+      "multiple_simultaneous": 2,
+      "none": 96,
+      "propagated": 64,
+      "remote": 32
+    },
+    "graph_dependent_decision_property": {
+      "coupling_changes_action": 48,
+      "direction_changes_action": 24,
+      "edge_failure_changes_action": 48,
+      "topology_changes_action": 72,
+      "topology_irrelevant_baseline": 48
+    },
+    "node_count_category": {
+      "1": 48,
+      "2": 72,
+      "3": 72,
+      "4-8": 48
+    },
+    "observability_type": {
+      "delayed_remote_sensor": 54,
+      "edge_hidden_inferred": 36,
+      "edge_visible": 60,
+      "full_local": 48,
+      "hidden_neighbor": 24,
+      "remote_sensor": 18
+    },
+    "topology_state": {
+      "alternative_route": 24,
+      "edge_disabled": 12,
+      "edge_restored": 24,
+      "static": 180
+    },
+    "topology_type": {
+      "alternative_path": 24,
+      "branch_tree": 24,
+      "chain": 120,
+      "single_component": 48,
+      "sparse_mesh": 24
+    }
+  },
+  "family_level_cell_count": 48,
+  "feature_counts": {
+    "atomic_batch": 48,
+    "coupling": 192,
+    "directed": 168,
+    "edge_fault": 32,
+    "edges": 192,
+    "hidden_edge_state": 84,
+    "multi_action": 84,
+    "multi_node": 192,
+    "three_action": 12,
+    "topology_change": 100,
+    "undirected": 72
+  },
+  "profile": "complete",
+  "scenario_count": 240,
+  "semantic_instance_count": 240,
+  "status": "pass"
+}

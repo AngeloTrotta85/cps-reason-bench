@@ -1,0 +1,66 @@
+suite_schema_version: 1
+name: cps_reason_core
+version: 1.0.0
+description: Small strict suite covering the four initial CPS reasoning families.
+task_families:
+  - prospective_reasoning
+  - planning
+  - interference
+  - conditional_safety
+
+difficulty_configurations:
+  prospective_reasoning:
+    basic: {sensor_delay_steps: 0, sensor_noise_std: 0.0}
+  planning:
+    basic: {planning_depth: 3, distractor_actions: 0}
+  interference:
+    basic: {misleading_sensor_count: 1, distractor_actions: 1}
+  conditional_safety:
+    basic: {hidden_rule_variables: 1, distractor_actions: 0}
+
+interaction:
+  source: scenario
+context:
+  source: scenario
+protocol:
+  prompt:
+    id: cps-reason-json-control
+    version: 1.0.0
+  schema:
+    id: cps-reason-decision
+    version: 1.0.0
+  output_validation_policy: strict
+  retry_policy:
+    name: strict_zero_correction
+    max_corrections: 0
+evaluation: {}
+
+scenarios:
+  - id: prospective_basic_generated
+    generator:
+      family: prospective_reasoning
+      level: basic
+      generation_seed: 101
+      template: ../scenarios/prospective_basic.yaml
+    simulator_seeds: [11]
+  - id: planning_basic_generated
+    generator:
+      family: planning
+      level: basic
+      generation_seed: 102
+      template: ../scenarios/planning_basic.yaml
+    simulator_seeds: [23]
+  - id: interference_basic_generated
+    generator:
+      family: interference
+      level: basic
+      generation_seed: 103
+      template: ../scenarios/interference_basic.yaml
+    simulator_seeds: [31]
+  - id: conditional_basic_generated
+    generator:
+      family: conditional_safety
+      level: basic
+      generation_seed: 104
+      template: ../scenarios/conditional_safety_basic.yaml
+    simulator_seeds: [47]

@@ -1,0 +1,12 @@
+config_version: 1
+name: offline_smoke
+models:
+  - name: scripted_reference
+    backend: scripted
+  - name: random_baseline
+    backend: random
+benchmark:
+  suite: cps_reason_graph_v2_local_smoke
+repetitions: 1
+output_dir: ../../runs/offline_smoke
+runtime: {max_episodes: 2}

@@ -1,0 +1,10 @@
+model_registry_schema_version: 1
+models:
+  scripted_reference:
+    backend: scripted
+    model: scripted
+  local_strict:
+    backend: ollama
+    model: test-model
+    base_url: http://localhost:11434
+    structured_output_mode: prompt_only

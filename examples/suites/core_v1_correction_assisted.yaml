@@ -1,0 +1,33 @@
+suite_schema_version: 1
+name: cps_reason_core_correction_assisted
+version: 1.0.0
+description: Core suite with one explicitly reported structured-output correction request.
+task_families:
+  - prospective_reasoning
+  - planning
+  - interference
+  - conditional_safety
+interaction: {source: scenario}
+context: {source: scenario}
+protocol:
+  prompt: {id: cps-reason-json-control, version: 1.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy:
+    name: one_correction_assisted
+    max_corrections: 1
+evaluation: {}
+scenarios:
+  - id: prospective_basic
+    path: ../scenarios/prospective_basic.yaml
+    simulator_seeds: [11]
+  - id: planning_basic
+    path: ../scenarios/planning_basic.yaml
+    simulator_seeds: [23]
+  - id: interference_basic
+    path: ../scenarios/interference_basic.yaml
+    simulator_seeds: [31]
+  - id: conditional_basic
+    path: ../scenarios/conditional_safety_basic.yaml
+    simulator_seeds: [47]
+

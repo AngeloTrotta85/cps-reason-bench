@@ -1,0 +1,166 @@
+suite_schema_version: 1
+name: cps_reason_graph_v2_pilot
+version: 1.0.0
+description: Pilot infrastructure CPS Reason Bench 0.5.0 graph-dependent reasoning
+  suite.
+task_families:
+- prospective_reasoning
+- planning
+- interference
+- conditional_safety
+- adaptation
+- temporal_tracking
+interaction:
+  source: scenario
+context:
+  source: scenario
+protocol:
+  prompt:
+    id: cps-reason-json-control
+    version: 2.0.0
+  schema:
+    id: cps-reason-decision
+    version: 1.0.0
+  output_validation_policy: strict
+  retry_policy:
+    name: strict_zero_correction
+    max_corrections: 0
+evaluation:
+  analysis_unit: semantic_condition_x_simulator_seed
+  default_model_repetitions: 5
+  scripted_reference_repetitions: 1
+  seeded_random_repetitions: 5
+  cluster_repetitions_by_analysis_unit: true
+  model_repetition_seed_policy: fixed_per_model_condition
+metric_requirements:
+  prospective_reasoning:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  planning:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  interference:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  conditional_safety:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  adaptation:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+  temporal_tracking:
+  - task_success
+  - safety_violations
+  - graph_dependent_decision_correct
+  - graph_exact_action_sequence_agreement
+difficulty_configurations: {}
+scenarios:
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510001
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810001
+- id: graph_v2_prospective_reasoning_graph_v2_entry_2_i02
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_2
+    generation_seed: 510011
+    parameters:
+      instance_index: 1
+  simulator_seeds:
+  - 810011
+- id: graph_v2_planning_graph_v2_bridge_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: planning
+    level: graph_v2_bridge
+    generation_seed: 510115
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810115
+- id: graph_v2_interference_graph_v2_core_3_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_3
+    generation_seed: 510221
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810221
+- id: graph_v2_interference_graph_v2_core_4_i04
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: interference
+    level: graph_v2_core_4
+    generation_seed: 510234
+    parameters:
+      instance_index: 3
+  simulator_seeds:
+  - 810234
+- id: graph_v2_conditional_safety_graph_v2_core_2_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: conditional_safety
+    level: graph_v2_core_2
+    generation_seed: 510291
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810291
+- id: graph_v2_adaptation_graph_v2_core_3_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: adaptation
+    level: graph_v2_core_3
+    generation_seed: 510385
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810385
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i03
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510471
+    parameters:
+      instance_index: 2
+  simulator_seeds:
+  - 810471
+- id: graph_v2_temporal_tracking_graph_v2_core_4_i05
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: temporal_tracking
+    level: graph_v2_core_4
+    generation_seed: 510475
+    parameters:
+      instance_index: 4
+  simulator_seeds:
+  - 810475

@@ -1,0 +1,16 @@
+config_version: 1
+name: paper_graph_v2_conditions
+description: Reconstruct the paper's 240 conditions and single scripted-reference pass; not the historical LLM campaign.
+models:
+  - name: scripted_reference
+    backend: scripted
+benchmark:
+  suite: cps_reason_graph_v2
+repetitions: 1
+protocol:
+  prompt: {id: cps-reason-json-control, version: 2.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy: {name: strict_zero_correction, max_corrections: 0}
+output_dir: ../../runs/paper_graph_v2_conditions
+runtime: {max_episodes: 240}

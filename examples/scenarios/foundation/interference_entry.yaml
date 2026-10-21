@@ -1,0 +1,59 @@
+schema_version: 1
+name: foundation_interference_entry
+description: Respond to two consistent current temperature observations.
+task_family: interference
+difficulty: 1
+difficulty_level: entry_1
+difficulty_profile:
+  family_parameters: {content_revision: foundation_v1}
+seed: 803
+max_steps: 3
+time_step: 1.0
+
+task:
+  instructions: Keep the sector online and restore temperature to at most 6 using the current sensor evidence.
+  objectives: [Keep the sector online, finish with temperature at or below 6.]
+  terminate_on_goals: true
+graph:
+  nodes:
+    sector:
+      variables:
+        temperature: {initial: 9.0, hard_min: 0.0, hard_max: 12.0}
+        online: {initial: true}
+  edges: []
+  resources:
+    cooling_energy: {initial: 2.0, min: 0.0, observable: true}
+sensors:
+  - {id: primary_temperature, target: sector.temperature, observable: true}
+  - {id: redundant_temperature, target: sector.temperature, observable: true}
+  - {id: online_sensor, target: sector.online, observable: true}
+actions:
+  - {id: cool_sector, operation: adjust, target: sector.temperature, amount: -4.0, costs: {cooling_energy: 1.0}, description: Reduce sector temperature by 4.}
+  - {id: wait, operation: noop, description: Make no physical intervention.}
+  - {id: emergency_shutdown, operation: set, target: sector.online, value: false, role: distractor, description: Shut down the sector.}
+faults: []
+constraints:
+  - {id: temperature_limit, kind: bounds, target: sector.temperature, max: 10.0}
+goals:
+  - {id: sector_online, condition: {target: sector.online, operator: eq, value: true}}
+  - {id: temperature_normal, condition: {target: sector.temperature, operator: le, value: 6.0}}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: previous, history_limit: 2, include_action_outcomes: true}
+evaluation:
+  required_actions: [cool_sector]
+  forbidden_actions: [emergency_shutdown]
+  unnecessary_actions: [emergency_shutdown]
+  emergency_actions: [emergency_shutdown]
+  evidence_gathering_actions: []
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: cool_sector}], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted response to consistent public evidence
+  optimality: not_claimed

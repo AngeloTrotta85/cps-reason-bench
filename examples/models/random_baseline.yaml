@@ -1,0 +1,6 @@
+model_config_schema_version: 1
+name: seeded_random
+backend: random
+model: random
+retry_policy: {name: strict_zero_correction, max_corrections: 0}
+

@@ -1,0 +1,10 @@
+config_version: 1
+name: custom_graph
+models:
+  - name: scripted_reference
+    backend: scripted
+benchmark:
+  scenarios: [../graphs/two_node_transfer.yaml]
+repetitions: 1
+output_dir: ../../runs/custom_graph
+runtime: {max_episodes: 1}

@@ -1,0 +1,71 @@
+schema_version: 1
+name: foundation_adaptation_entry
+description: Switch from an initially effective actuator to a clear backup after visible failure.
+task_family: adaptation
+difficulty: 1
+difficulty_level: entry_1
+difficulty_profile:
+  family_parameters: {content_revision: foundation_v1}
+seed: 805
+max_steps: 5
+time_step: 1.0
+
+task:
+  instructions: Raise process output to at least 5. The primary actuator initially works; use public outcomes and output observations to switch to the backup if its behavior changes.
+  objectives: [Finish with process output at or above 5.]
+  terminate_on_goals: false
+graph:
+  nodes:
+    process:
+      variables:
+        output: {initial: 0.0, hard_min: 0.0, hard_max: 10.0}
+  edges: []
+  resources:
+    recovery_energy: {initial: 6.0, min: 0.0, observable: true}
+    diagnostic_budget: {initial: 1.0, min: 0.0, observable: true}
+sensors:
+  - {id: output_sensor, target: process.output, observable: true}
+actions:
+  - {id: primary_boost, operation: adjust, target: process.output, amount: 2.0, costs: {recovery_energy: 1.0}, description: Raise output by 2 while the primary actuator is effective.}
+  - {id: backup_boost, operation: adjust, target: process.output, amount: 3.0, costs: {recovery_energy: 1.0}, description: Raise output by 3 using the independent backup actuator.}
+  - {id: wait, operation: noop, description: Make no physical intervention.}
+faults:
+  - {id: primary_loss, at_step: 1, kind: actuator_disabled, target: primary_boost, announced: false}
+constraints: []
+goals:
+  - {id: output_recovered, condition: {target: process.output, operator: ge, value: 5.0}}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: history, history_limit: 4, include_action_outcomes: true, include_public_events: true}
+evaluation:
+  required_actions: [primary_boost, backup_boost]
+  expected_action_sequence: [primary_boost, primary_boost, backup_boost]
+  reference_action_count: 3
+  success_requires_required_actions: true
+  success_requires_adaptation: true
+  success_requires_safety: true
+  reference_expected_rejections: [{action_id: primary_boost, at_step: 1}]
+  adaptation:
+    regime_change_step: 1
+    effect_target: process.output
+    original_actions: [primary_boost]
+    replacement_actions: [backup_boost]
+    safe_replacement_actions: [backup_boost]
+    sufficient_evidence_step: 2
+    evidence_clarity: clear
+    evidence_required_observations: 1
+    unnecessary_exploration_actions: []
+    recovery_resource_ids: [recovery_energy]
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: primary_boost}], callback: null, subscriptions: [], context_requests: []}
+    - at_step: 1
+      decision: {actions: [{action_id: primary_boost}], callback: null, subscriptions: [], context_requests: []}
+    - at_step: 2
+      decision: {actions: [{action_id: backup_boost}], callback: null, subscriptions: [], context_requests: []}
+  default_decision: {actions: [], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted pre-change action, visible failure, and backup recovery
+  optimality: not_claimed

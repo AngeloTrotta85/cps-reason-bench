@@ -1,0 +1,14 @@
+include LICENSE README.md pyproject.toml .gitignore .env.example
+include *.md release_manifest.json
+recursive-include configs *.yaml
+recursive-include docs *.md
+recursive-include artifacts *.json
+recursive-include benchmark *.yaml *.json
+recursive-include examples *.yaml *.json
+recursive-include scripts *.py
+recursive-include tests *.py *.yaml
+recursive-include src/cps_reason_bench/data *.yaml *.json
+global-exclude *.pyc
+prune runs
+prune build
+prune dist

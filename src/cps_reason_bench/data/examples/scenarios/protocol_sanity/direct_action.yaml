@@ -1,0 +1,60 @@
+schema_version: 1
+name: protocol_sanity_direct_action
+description: Select one visible action that directly restores a numeric process variable.
+task_family: protocol_sanity
+difficulty: 1
+difficulty_level: sanity_direct
+difficulty_profile:
+  family_parameters: {layer: protocol_sanity_v1, capability: direct_action}
+seed: 701
+max_steps: 1
+time_step: 1.0
+
+task:
+  instructions: Restore the chamber temperature to at most 5 using the available operational controls.
+  objectives: [Finish with chamber temperature at or below 5.]
+  terminate_on_goals: true
+
+graph:
+  nodes:
+    chamber:
+      variables:
+        temperature: {initial: 9.0, hard_min: 0.0, hard_max: 12.0}
+  edges: []
+  resources: {}
+sensors:
+  - {id: temperature_sensor, target: chamber.temperature, observable: true}
+actions:
+  - id: cool_chamber
+    operation: adjust
+    target: chamber.temperature
+    amount: -4.0
+    description: Reduce chamber temperature by 4.
+  - {id: wait, operation: noop, description: Leave the chamber unchanged.}
+faults: []
+constraints: []
+goals:
+  - id: normal_temperature
+    status_observable: true
+    condition: {target: chamber.temperature, operator: le, value: 5.0}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: current, history_limit: 1, include_action_outcomes: true}
+evaluation:
+  required_actions: [cool_chamber]
+  expected_action_sequence: [cool_chamber]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+  protocol_sanity:
+    correct_action: cool_chamber
+    one_step_solution: true
+    hidden_state_required: false
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: cool_chamber}], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted one-step replay
+  optimality: not_claimed

@@ -1,0 +1,30 @@
+suite_schema_version: 1
+name: cps_reason_graph_v2_local_smoke
+version: 1.0.0
+description: One non-scientific local runtime smoke condition.
+task_families: [prospective_reasoning]
+interaction: {source: scenario}
+context: {source: scenario}
+protocol:
+  prompt: {id: cps-reason-json-control, version: 2.0.0}
+  schema: {id: cps-reason-decision, version: 1.0.0}
+  output_validation_policy: strict
+  retry_policy: {name: strict_zero_correction, max_corrections: 0}
+evaluation:
+  analysis_unit: operational_smoke_only
+  default_model_repetitions: 1
+  qualification_excluded_from_scientific_results: true
+  model_repetition_seed_policy: fixed_per_model_condition
+metric_requirements:
+  prospective_reasoning: [task_success, safety_violations, graph_dependent_decision_correct, graph_exact_action_sequence_agreement]
+difficulty_configurations: {}
+scenarios:
+- id: graph_v2_prospective_reasoning_graph_v2_entry_1_i01
+  generator:
+    generator_id: cps_reason_graph_v2_generator
+    version: 1.0.0
+    family: prospective_reasoning
+    level: graph_v2_entry_1
+    generation_seed: 510001
+    parameters: {instance_index: 0}
+  simulator_seeds: [810001]

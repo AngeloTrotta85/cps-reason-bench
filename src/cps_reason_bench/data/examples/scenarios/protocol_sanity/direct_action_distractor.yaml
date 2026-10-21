@@ -1,0 +1,66 @@
+schema_version: 1
+name: protocol_sanity_direct_action_distractor
+description: Select a direct useful action while ignoring one harmless alternative.
+task_family: protocol_sanity
+difficulty: 1
+difficulty_level: sanity_distractor
+difficulty_profile:
+  family_parameters: {layer: protocol_sanity_v1, capability: action_selection}
+seed: 702
+max_steps: 1
+time_step: 1.0
+
+task:
+  instructions: Open the outlet so the process can discharge normally.
+  objectives: [Finish with the outlet open.]
+  terminate_on_goals: true
+
+graph:
+  nodes:
+    process:
+      variables:
+        outlet_open: {initial: false}
+        status_light: {initial: false}
+  edges: []
+  resources: {}
+sensors:
+  - {id: outlet_sensor, target: process.outlet_open, observable: true}
+  - {id: light_sensor, target: process.status_light, observable: true}
+actions:
+  - {id: open_outlet, operation: set, target: process.outlet_open, value: true, description: Open the process outlet.}
+  - id: test_status_light
+    operation: set
+    target: process.status_light
+    value: true
+    role: distractor
+    description: Test the status light without changing the outlet.
+  - {id: wait, operation: noop, description: Leave the process unchanged.}
+faults: []
+constraints: []
+goals:
+  - id: outlet_ready
+    status_observable: true
+    condition: {target: process.outlet_open, operator: eq, value: true}
+observability: {full_state: false}
+interaction: {mode: periodic, interval_steps: 1, max_actions_per_interaction: 1}
+context: {mode: current, history_limit: 1, include_action_outcomes: true}
+evaluation:
+  required_actions: [open_outlet]
+  forbidden_actions: [test_status_light]
+  unnecessary_actions: [test_status_light]
+  expected_action_sequence: [open_outlet]
+  reference_action_count: 1
+  success_requires_required_actions: true
+  success_requires_safety: true
+  protocol_sanity:
+    correct_action: open_outlet
+    one_step_solution: true
+    hidden_state_required: false
+baseline:
+  script:
+    - at_step: 0
+      decision: {actions: [{action_id: open_outlet}], callback: null, subscriptions: [], context_requests: []}
+reference:
+  kind: feasible_reference
+  evidence: scripted one-step replay
+  optimality: not_claimed

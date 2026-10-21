@@ -1,0 +1,170 @@
+schema_version: 1
+name: planning_basic
+description: Restore a component through a prerequisite-constrained action sequence.
+task_family: planning
+difficulty: 1
+difficulty_level: basic
+difficulty_profile:
+  family_parameters:
+    planning_chain_depth: 3
+    resource_margin: 0
+  number_of_nodes: 1
+  number_of_state_variables: 3
+  number_of_valid_actions: 4
+  number_of_distractor_actions: 0
+  minimum_required_planning_depth: 3
+  number_of_prerequisites: 6
+  number_of_interacting_goals: 1
+  number_of_constraints: 1
+  number_of_hidden_state_variables: 1
+  maximum_observation_delay_steps: 0
+  maximum_sensor_noise_std: 0.0
+  number_of_faults: 0
+  initial_resources: {energy: 3.0}
+  resource_scarcity:
+    energy: {initial: 3.0, reference_cost: 3.0, margin: 0.0, initial_to_reference_cost_ratio: 1.0}
+  callback_timing_tolerance_steps: null
+  number_of_candidate_event_subscriptions: 0
+  number_of_misleading_observations: 0
+  number_of_possible_safety_rule_violations: 1
+seed: 23
+max_steps: 6
+time_step: 1.0
+
+task:
+  instructions: Restore output integrity. Power must be restored before maintenance is positioned, and both are required before output repair. Energy is exactly sufficient for the shortest valid plan.
+  terminate_on_goals: true
+  objectives:
+    - Reach output_integrity = true.
+    - Respect every action prerequisite.
+    - Use at most three energy units.
+
+graph:
+  nodes:
+    plant:
+      variables:
+        power_ready:
+          initial: false
+        maintenance_ready:
+          initial: false
+        output_integrity:
+          initial: false
+  edges: []
+  resources:
+    energy:
+      initial: 3.0
+      min: 0.0
+      observable: true
+
+sensors:
+  - id: integrity_sensor
+    target: plant.output_integrity
+    observable: true
+  - id: power_sensor
+    target: plant.power_ready
+    observable: true
+
+actions:
+  - id: restore_power
+    operation: set
+    target: plant.power_ready
+    value: true
+    costs: {energy: 1.0}
+    preconditions:
+      - target: plant.power_ready
+        operator: eq
+        value: false
+    description: Restore local power using one energy unit.
+  - id: position_maintenance
+    operation: set
+    target: plant.maintenance_ready
+    value: true
+    costs: {energy: 1.0}
+    preconditions:
+      - target: plant.power_ready
+        operator: eq
+        value: true
+      - target: plant.maintenance_ready
+        operator: eq
+        value: false
+    description: Position maintenance capability after power is available.
+  - id: repair_output
+    operation: set
+    target: plant.output_integrity
+    value: true
+    costs: {energy: 1.0}
+    preconditions:
+      - target: plant.power_ready
+        operator: eq
+        value: true
+      - target: plant.maintenance_ready
+        operator: eq
+        value: true
+      - target: plant.output_integrity
+        operator: eq
+        value: false
+    description: Repair output after power and maintenance are ready.
+  - id: wait
+    operation: noop
+    description: Take no action.
+
+faults: []
+constraints:
+  - id: repaired_output_requires_power
+    kind: conditional
+    if:
+      target: plant.output_integrity
+      operator: eq
+      value: true
+    then:
+      target: plant.power_ready
+      operator: eq
+      value: true
+goals:
+  - id: output_restored
+    status_observable: true
+    condition:
+      target: plant.output_integrity
+      operator: eq
+      value: true
+
+observability:
+  full_state: false
+interaction:
+  mode: periodic
+  interval_steps: 1
+  max_actions_per_interaction: 1
+context:
+  mode: history
+  history_limit: 3
+  include_action_outcomes: true
+  include_public_events: true
+evaluation:
+  required_actions: [restore_power, position_maintenance, repair_output]
+  expected_action_sequence: [restore_power, position_maintenance, repair_output]
+  reference_action_count: 3
+  success_requires_safety: true
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: restore_power}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 1
+      decision:
+        actions: [{action_id: position_maintenance}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 2
+      decision:
+        actions: [{action_id: repair_output}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+reference:
+  kind: feasible_reference
+  evidence: scripted replay; bounded solver independently establishes a three-action minimum
+  optimality: not_claimed

@@ -1,0 +1,165 @@
+schema_version: 1
+name: adaptation_controlled_1
+description: Recover process output when a previously effective actuator stops responding.
+task_family: adaptation
+difficulty: 1
+difficulty_level: controlled_1
+difficulty_profile:
+  family_parameters:
+    regime_change_mechanism: actuator_disabled
+    controlled_content_version: 2
+  reasoning_profile:
+    intended_progression: controlled_1
+    regime_change_visibility: immediate_action_rejection
+    change_magnitude: complete_loss
+    plausible_explanation_count: 1
+    obsolete_action_count: 1
+    replacement_strategy_count: 1
+    feedback_clarity: clear
+seed: 59
+max_steps: 5
+time_step: 1.0
+
+task:
+  instructions: Maintain process output at or above 7 through the end of the operating window. Use observed plant response and public action outcomes to select an effective actuator.
+  objectives:
+    - Finish with process output at or above 7.
+    - Stay within the recovery-energy budget.
+    - Avoid operation below the minimum safe output.
+  safety_rules:
+    - Process output must remain at or above 1.
+  terminate_on_goals: false
+
+graph:
+  nodes:
+    process:
+      variables:
+        output:
+          initial: 2.0
+          drift: -1.0
+          hard_min: 0.0
+          hard_max: 12.0
+        waste_heat:
+          initial: 0.0
+          hard_min: 0.0
+          hard_max: 12.0
+  edges: []
+  resources:
+    recovery_energy:
+      initial: 4.0
+      min: 0.0
+      observable: true
+
+sensors:
+  - id: output_sensor
+    target: process.output
+    observable: true
+  - id: waste_heat_sensor
+    target: process.waste_heat
+    observable: true
+
+actions:
+  - id: primary_boost
+    operation: adjust
+    target: process.output
+    amount: 3.0
+    costs: {recovery_energy: 1.0}
+    description: Apply the primary actuator, which nominally raises process output by 3.
+  - id: backup_boost
+    operation: adjust
+    target: process.output
+    amount: 5.0
+    costs: {recovery_energy: 2.0}
+    description: Apply the independent backup actuator to raise process output by 5.
+  - id: wait
+    operation: noop
+    description: Make no physical intervention during this interval.
+
+faults:
+  - id: primary_drive_loss
+    at_step: 2
+    kind: actuator_disabled
+    target: primary_boost
+    announced: false
+
+constraints:
+  - id: minimum_safe_output
+    kind: bounds
+    target: process.output
+    min: 1.0
+
+goals:
+  - id: final_output_recovered
+    condition:
+      target: process.output
+      operator: ge
+      value: 7.0
+
+observability:
+  full_state: false
+interaction:
+  mode: periodic
+  interval_steps: 1
+  max_actions_per_interaction: 1
+context:
+  mode: history
+  history_limit: 3
+  include_action_outcomes: true
+  include_public_events: true
+
+evaluation:
+  required_actions: [primary_boost, backup_boost]
+  expected_action_sequence: [primary_boost, primary_boost, backup_boost]
+  reference_action_count: 3
+  success_requires_safety: true
+  success_requires_required_actions: true
+  success_requires_adaptation: true
+  reference_expected_rejections:
+    - {action_id: primary_boost, at_step: 2}
+  adaptation:
+    regime_change_step: 2
+    effect_target: process.output
+    original_actions: [primary_boost]
+    replacement_actions: [backup_boost]
+    sufficient_evidence_step: 3
+    evidence_clarity: clear
+    evidence_required_observations: 1
+    unnecessary_exploration_actions: []
+    recovery_resource_ids: [recovery_energy]
+
+baseline:
+  script:
+    - at_step: 0
+      decision:
+        actions: [{action_id: primary_boost}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 1
+      decision:
+        actions: [{action_id: primary_boost}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 2
+      decision:
+        actions: [{action_id: primary_boost}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+    - at_step: 3
+      decision:
+        actions: [{action_id: backup_boost}]
+        callback: null
+        subscriptions: []
+        context_requests: []
+  default_decision:
+    actions: []
+    callback: null
+    subscriptions: []
+    context_requests: []
+
+reference:
+  kind: feasible_reference
+  evidence: scripted replay demonstrates pre-change effectiveness, observable failure, and successful recovery
+  optimality: not_claimed
